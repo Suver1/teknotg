@@ -1,0 +1,52 @@
+{"frames": [
+
+{
+	"filename": "pgman01.png",
+	"frame": {"x":2,"y":2,"w":32,"h":29},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":29},
+	"sourceSize": {"w":32,"h":29}
+},
+{
+	"filename": "pgman02.png",
+	"frame": {"x":36,"y":2,"w":32,"h":29},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":29},
+	"sourceSize": {"w":32,"h":29}
+},
+{
+	"filename": "pgman03.png",
+	"frame": {"x":70,"y":2,"w":32,"h":29},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":29},
+	"sourceSize": {"w":32,"h":29}
+},
+{
+	"filename": "pgman04.png",
+	"frame": {"x":2,"y":33,"w":32,"h":29},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":29},
+	"sourceSize": {"w":32,"h":29}
+},
+{
+	"filename": "pgman05.png",
+	"frame": {"x":36,"y":33,"w":32,"h":29},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":29},
+	"sourceSize": {"w":32,"h":29}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "pgmanSprite.png",
+	"format": "RGBA8888",
+	"size": {"w":104,"h":64},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:b36fcb7c7bae3470a290e02de92234f8:f468f37fc8afb7927ba5a3feb12d0f2c:ca40935893aba1523373a2984798bbc2$"
+}
+}
