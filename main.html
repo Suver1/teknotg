@@ -1,33 +1,33 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <title>Tek TG</title>
-    <script type="text/javascript" src="phaser.min.js"></script>
-    <script type="text/javascript" src="src/boot.js"></script>
-    <script type="text/javascript" src="src/preload.js"></script>
-    <script type="text/javascript" src="src/startmenu.js"></script>
-    <script type="text/javascript" src="src/tggame.js"></script>
-    <script type="text/javascript" src="src/gameover.js"></script>
-    <style type="text/css">
-        body {
-            margin: 0;
-        }
-    </style>
-</head>
-<body>
-    <script type="text/javascript">
-        (function() {
-            // Phaser.game params: X, Y, Rendering context (Phaser.CANVAS, Phaser.WEBGL or Phaser.AUTO), DOM element ID (empty string will default append to body).
-            var game = new Phaser.Game(320, 480, Phaser.CANVAS, "tg-game");    
-            game.state.add("Boot", boot);
-            game.state.add("Preload", preload);
-            game.state.add("StartMenu", startMenu);
-            game.state.add("TgGame", tgGame);
-            game.state.add("GameOver", gameOver);
-            game.state.start("Boot");
-        })();
-    </script>
-</body>
-<div id="tg-game" style="padding: 50px;"></div>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Tek TG</title>
+        <script type="text/javascript" src="phaser.min.js"></script>
+        <script type="text/javascript" src="src/boot.js"></script>
+        <script type="text/javascript" src="src/preload.js"></script>
+        <script type="text/javascript" src="src/startmenu.js"></script>
+        <script type="text/javascript" src="src/tggame.js"></script>
+        <script type="text/javascript" src="src/gameover.js"></script>
+        <style type="text/css">
+            body {
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="tg-game" style="padding: 50px;"></div>
+        <script type="text/javascript">
+            (function() {
+                // Phaser.game params: X, Y, Rendering context (Phaser.CANVAS, Phaser.WEBGL or Phaser.AUTO), DOM element ID (empty string will default append to body).
+                var game = new Phaser.Game(320, 480, Phaser.CANVAS, "tg-game");
+                game.state.add("Boot", Boot);
+                game.state.add("Preload", Preload);
+                game.state.add("StartMenu", StartMenu);
+                game.state.add("TgGame", TgGame);
+                game.state.add("GameOver", GameOver);
+                game.state.start("Boot");
+            })();
+        </script>
+    </body>
 </html>

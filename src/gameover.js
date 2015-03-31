@@ -1,6 +1,6 @@
-var gameOver = function(game) {}
+var GameOver = function(game) {}
 
-gameOver.prototype = {
+GameOver.prototype = {
     init: function(score) {
         alert("Your score: " + score);
     },

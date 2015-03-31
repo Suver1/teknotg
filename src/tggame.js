@@ -1,9 +1,9 @@
-var tgGame = function(game) {
+var TgGame = function(game) {
     // insert global variables here
     score = 0;
 }
 
-tgGame.prototype = {
+TgGame.prototype = {
     create: function() {
         console.log("tggame");
         score = 1;

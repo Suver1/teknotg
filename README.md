@@ -3,7 +3,10 @@ Phaser game created on The Gathering 2015 - theme competition, by people from <a
 
 # Code structure
 * Place Javascript in src/
-* Place Css in css/
+* Place CSS in css/
+
+# Code style
+* Class names in capital. `var game = new Game(), tgGame = new TgGame()`;
 
 # Licence
 Nope. nooopnopenope nope.

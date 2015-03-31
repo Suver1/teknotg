@@ -1,8 +1,8 @@
 // preload assets
 
-var preload = function(game) {}
+var Preload = function(game) {}
 
-preload.prototype = {
+Preload.prototype = {
     preload: function() {
         // load loading bar
         // load assets
