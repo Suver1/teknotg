@@ -8,10 +8,21 @@ Level01.prototype = {
         console.log("Level 01");
         score = 1;
         var gameOver = this.game.add.button(this.game.width / 2, this.game.height / 2, "star", this.gameOverScreen, this);
+
+        // Ground setup
+        platforms = game.add.group();
+        platforms.enableBody = true;
+        var ground = platforms.create(0, game.world.height - 64, "platform");
+        ground.body.immovable = true;
+
+        // Player setup
         player = this.game.add.sprite(150, 150, "player1");
+        this.game.physics.arcade.enable(player);
+        player.body.gravity.y = 600;
     },
     update: function() {
         // runs every frame. insert game logic here.
+        game.physics.arcade.collide(player, platforms);
     },
     gameOverScreen: function() {
         // this.game.state.start parameters: 
