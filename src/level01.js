@@ -32,6 +32,7 @@ Level01.prototype = {
         this.player = this.game.add.sprite(150, 150, "player1");
         this.game.physics.arcade.enable(this.player);
         this.player.body.gravity.y = 600;
+        this.player.isInAir = true; //Maybe remove if player starts on ground
 
         // Camera setup - Camera stops following player when it hits world bounds.
         this.game.camera.follow(this.player);
@@ -44,13 +45,12 @@ Level01.prototype = {
         // runs every frame. insert game logic here.
         this.player.body.velocity.x = 50;
         this.game.physics.arcade.collide(this.player, platforms);
-        this.game.physics.arcade.collide(this.player, this.groundLayer);
-        this.game.physics.arcade.collide(this.player, this.blockLayer);
-        
-        // TODO check if player is touching ground
-        if (this.cursors.up.isDown) {
-            console.log(this);
+        this.game.physics.arcade.collide(this.player, this.groundLayer, this.playerTouchGround, undefined, this);
+        this.game.physics.arcade.collide(this.player, this.blockLayer, this.playerTouchGround, undefined, this);
+
+        if (this.cursors.up.isDown && this.player.isInAir === false) {
             this.player.body.velocity.y = -350;
+            this.player.isInAir = true;
         }
 
     },
@@ -61,5 +61,8 @@ Level01.prototype = {
         // 3. clearCache (default false) clears all loaded assets.
         // 4. All other parameters from the fourth are variables that will be passed to the init function (if it has one). We pass the score to the GameOver state.
         this.game.state.start("GameOver", true, false, score);
+    },
+    playerTouchGround: function(player, ground) {
+        player.isInAir = false;
     }
 };
