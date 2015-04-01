@@ -36,13 +36,22 @@ Level01.prototype = {
         // Camera setup - Camera stops following player when it hits world bounds.
         this.game.camera.follow(this.player);
 
+        // Input setup
+        this.cursors = game.input.keyboard.createCursorKeys();
+
     },
     update: function() {
         // runs every frame. insert game logic here.
         this.player.body.velocity.x = 50;
-        game.physics.arcade.collide(this.player, platforms);
+        this.game.physics.arcade.collide(this.player, platforms);
         this.game.physics.arcade.collide(this.player, this.groundLayer);
         this.game.physics.arcade.collide(this.player, this.blockLayer);
+        
+        // TODO check if player is touching ground
+        if (this.cursors.up.isDown) {
+            console.log(this);
+            this.player.body.velocity.y = -350;
+        }
 
     },
     gameOverScreen: function() {
