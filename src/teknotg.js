@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.appendChild(container);
     var width = window.innerHeight*(16/9);
     game = new Phaser.Game(width, window.innerHeight, Phaser.AUTO, container);
+    game.debugMode = true;
 
     game.state.add("Boot", Boot);
     game.state.add("Preload", Preload);

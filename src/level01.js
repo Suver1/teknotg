@@ -49,10 +49,14 @@ Level01.prototype = {
         
         // TODO check if player is touching ground
         if (this.cursors.up.isDown) {
-            console.log(this);
             this.player.body.velocity.y = -350;
         }
 
+    },
+    render: function() {
+        if (this.game.debugMode) {
+            this.game.debug.text('fps: ' + this.game.time.fps, 0, 17, '#00FF00');
+        }
     },
     gameOverScreen: function() {
         // this.game.state.start parameters:

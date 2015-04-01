@@ -9,6 +9,11 @@ StartMenu.prototype = {
         var playButton = this.game.add.button(100, 100, "star", this.playTheGame, this);
         console.log("startmenu");
     },
+    render: function() {
+        if (this.game.debugMode) {
+            this.game.debug.text('fps: ' + this.game.time.fps, 0, 17, '#00FF00');
+        }
+    },
     playTheGame: function() {
         this.game.state.start("Level01");
     }

@@ -5,7 +5,8 @@ var Preload = function(game) {
 
 Preload.prototype = {
     preload: function() {
-        // load loading bar
+        // load loading bar - onFileComplete
+        this.game.time.advancedTiming = true;
         // load assets
         this.game.load.tilemap('teknotg_testlevel02', 'assets/teknotg_testlevel02.json', null, Phaser.Tilemap.TILED_JSON);
         this.game.load.image('simples_pimples_32px', 'assets/simples_pimples_32px.png');
@@ -17,5 +18,10 @@ Preload.prototype = {
     create: function() {
         console.log("preload");
         this.game.state.start("StartMenu");
+    },
+    render: function() {
+        if (this.game.debugMode) {
+            this.game.debug.text('fps: ' + this.game.time.fps, 0, 17, '#00FF00');
+        }
     }
 };
