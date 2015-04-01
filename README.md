@@ -1,6 +1,11 @@
 # teknotg
 Phaser game created on The Gathering 2015 - theme competition, by people from <a href="http://tek.no">Tek.no</a>
 
+# Contributing
+* Editing maps
+  * Download [Tiled](http://www.mapeditor.org/)
+  * Save as .tmx AND export as pretty JSON
+
 # Code structure
 * Place Javascript in src/
 * Place CSS in css/
