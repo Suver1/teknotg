@@ -8,6 +8,6 @@ StartMenu.prototype = {
         console.log("startmenu");
     },
     playTheGame: function() {
-        this.game.state.start("TgGame");
+        this.game.state.start("Level01");
     }
 }
