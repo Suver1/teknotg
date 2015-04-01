@@ -8,6 +8,7 @@ TgGame.prototype = {
         console.log("tggame");
         score = 1;
         var gameOver = this.game.add.button(this.game.width / 2, this.game.height / 2, "star", this.gameOverScreen, this);
+        player = this.game.add.sprite(150, 150, "player1");
     },
     update: function() {
         // runs every frame. insert game logic here.
