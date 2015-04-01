@@ -2,12 +2,12 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>Tek TG</title>
+        <title>Time as a tool</title>
         <script type="text/javascript" src="phaser.min.js"></script>
         <script type="text/javascript" src="src/boot.js"></script>
         <script type="text/javascript" src="src/preload.js"></script>
         <script type="text/javascript" src="src/startmenu.js"></script>
-        <script type="text/javascript" src="src/tggame.js"></script>
+        <script type="text/javascript" src="src/level01.js"></script>
         <script type="text/javascript" src="src/gameover.js"></script>
         <style type="text/css">
             body {
@@ -24,7 +24,7 @@
                 game.state.add("Boot", Boot);
                 game.state.add("Preload", Preload);
                 game.state.add("StartMenu", StartMenu);
-                game.state.add("TgGame", TgGame);
+                game.state.add("Level01", Level01);
                 game.state.add("GameOver", GameOver);
                 game.state.start("Boot");
             })();
