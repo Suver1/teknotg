@@ -15,4 +15,4 @@ Boot.prototype = {
         this.game.state.start("Preload");
         this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
     }
-}
+};

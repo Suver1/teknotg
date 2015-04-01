@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     container.style.top = 0;
     container.style.height = '100%';
     document.body.appendChild(container);
-    var width = window.innerHeight*(320/480);
+    var width = window.innerHeight*(16/9);
     game = new Phaser.Game(width, window.innerHeight, Phaser.AUTO, container);
 
     game.state.add("Boot", Boot);

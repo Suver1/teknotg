@@ -1,5 +1,7 @@
 // Create the start menu, accept settings etc.
-var StartMenu = function(game){}
+var StartMenu = function(game) {
+
+};
 
 StartMenu.prototype = {
     create: function() {
@@ -10,4 +12,4 @@ StartMenu.prototype = {
     playTheGame: function() {
         this.game.state.start("Level01");
     }
-}
+};
