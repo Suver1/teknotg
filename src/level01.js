@@ -6,8 +6,10 @@ var Level01 = function(game) {
 Level01.prototype = {
     create: function() {
         console.log("Level 01");
-        score = 1;
         var gameOver = this.game.add.button(this.game.width / 2, this.game.height / 2, "star", this.gameOverScreen, this);
+        // Set world dimensions
+        // TODO replace last two parameters with the maps width.
+        this.game.world.setBounds(0, 0, 2000, 2000);
 
         // Ground setup
         platforms = game.add.group();
@@ -16,13 +18,21 @@ Level01.prototype = {
         ground.body.immovable = true;
 
         // Player setup
-        player = this.game.add.sprite(150, 150, "player1");
-        this.game.physics.arcade.enable(player);
-        player.body.gravity.y = 600;
+        this.player = this.game.add.sprite(150, 150, "player1");
+        this.game.physics.arcade.enable(this.player);
+        this.player.body.gravity.y = 600;
+
+        // Camera setup - Camera stops following player when it hits world bounds.
+        this.game.camera.follow(this.player);
+
+
+        // Camera setup
+
     },
     update: function() {
         // runs every frame. insert game logic here.
-        game.physics.arcade.collide(player, platforms);
+        this.player.body.velocity.x = 50;
+        game.physics.arcade.collide(this.player, platforms);
     },
     gameOverScreen: function() {
         // this.game.state.start parameters: 
