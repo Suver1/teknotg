@@ -9,6 +9,7 @@
         <script type="text/javascript" src="src/startmenu.js"></script>
         <script type="text/javascript" src="src/level01.js"></script>
         <script type="text/javascript" src="src/gameover.js"></script>
+        <script type="text/javascript" src="src/teknotg.js"></script>
         <style type="text/css">
             body {
                 margin: 0;
@@ -16,18 +17,6 @@
         </style>
     </head>
     <body>
-        <div id="tg-game" style="padding: 50px;"></div>
-        <script type="text/javascript">
-            (function() {
-                // Phaser.game params: X, Y, Rendering context (Phaser.CANVAS, Phaser.WEBGL or Phaser.AUTO), DOM element ID (empty string will default append to body).
-                var game = new Phaser.Game(320, 480, Phaser.CANVAS, "tg-game");
-                game.state.add("Boot", Boot);
-                game.state.add("Preload", Preload);
-                game.state.add("StartMenu", StartMenu);
-                game.state.add("Level01", Level01);
-                game.state.add("GameOver", GameOver);
-                game.state.start("Boot");
-            })();
-        </script>
+        <h4>Laster...</h4>
     </body>
 </html>

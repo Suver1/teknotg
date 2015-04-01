@@ -13,5 +13,6 @@ Boot.prototype = {
     create: function() {
         // Set screen settings here
         this.game.state.start("Preload");
+        this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
     }
 }
