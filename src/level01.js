@@ -5,6 +5,7 @@ var Level01 = function(game) {
 
 Level01.prototype = {
     create: function() {
+        var jump = false;
         console.log("Level 01");
         var gameOver = this.game.add.button(this.game.width / 2, this.game.height / 2, "star", this.gameOverScreen, this);
         // Set world dimensions
@@ -39,6 +40,8 @@ Level01.prototype = {
 
         // Input setup
         this.cursors = game.input.keyboard.createCursorKeys();
+        this.game.input.onDown.add(this.jump, this);
+        this.cursors.up.onDown.add(this.jump, this);
 
     },
     update: function() {
@@ -48,9 +51,8 @@ Level01.prototype = {
         this.game.physics.arcade.collide(this.player, this.groundLayer, this.playerTouchGround, undefined, this);
         this.game.physics.arcade.collide(this.player, this.blockLayer, this.playerTouchGround, undefined, this);
 
-        if (this.cursors.up.isDown && this.player.isInAir === false) {
-            this.player.body.velocity.y = -350;
-            this.player.isInAir = true;
+
+        if ((this.cursors.up.isDown) && this.player.isInAir === false) {
         }
 
     },
@@ -69,5 +71,11 @@ Level01.prototype = {
     },
     playerTouchGround: function(player, ground) {
         player.isInAir = false;
+    },
+    jump: function(context, pointerEvent) {
+        if (this.player.isInAir === false) {
+            this.player.body.velocity.y = -350;
+            this.player.isInAir = true;
+        }
     }
 };

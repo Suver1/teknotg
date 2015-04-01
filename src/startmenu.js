@@ -5,9 +5,9 @@ var StartMenu = function(game) {
 
 StartMenu.prototype = {
     create: function() {
-        var startMenu = this.game.add.button(50, 50, "star");
+        var muteButton = this.game.add.button(50, 50, "star", this.muteSound, this);
         var playButton = this.game.add.button(100, 100, "star", this.playTheGame, this);
-        console.log("startmenu");
+        // Input setup
     },
     render: function() {
         if (this.game.debugMode) {
@@ -16,5 +16,8 @@ StartMenu.prototype = {
     },
     playTheGame: function() {
         this.game.state.start("Level01");
+    },
+    muteSound: function() {
+        // mute all sound
     }
 };
