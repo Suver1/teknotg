@@ -9,6 +9,17 @@ Level01.prototype = {
         score = 1;
         var gameOver = this.game.add.button(this.game.width / 2, this.game.height / 2, "star", this.gameOverScreen, this);
 
+        this.map = this.game.add.tilemap('teknotg_testlevel02');
+        this.map.addTilesetImage('simples_pimples_32px', 'simples_pimples_32px');
+        //this.map.scale = {x: 2, y: 2};
+
+        this.groundLayer = this.map.createLayer('Ground');
+        //this.groundLayer.scale = {x: 2, y: 2};
+        this.map.setCollisionBetween(1, 2000, true, this.groundLayer);
+        this.blockLayer = this.map.createLayer('Blocks');
+        //this.blockLayer.scale = {x: 2, y: 2};
+        this.map.setCollisionBetween(1, 2000, true, this.blockLayer);
+
         // Ground setup
         platforms = game.add.group();
         platforms.enableBody = true;
@@ -16,13 +27,15 @@ Level01.prototype = {
         ground.body.immovable = true;
 
         // Player setup
-        player = this.game.add.sprite(150, 150, "player1");
-        this.game.physics.arcade.enable(player);
-        player.body.gravity.y = 600;
+        this.player = this.game.add.sprite(150, 150, "player1");
+        this.game.physics.arcade.enable(this.player);
+        this.player.body.gravity.y = 600;
     },
     update: function() {
         // runs every frame. insert game logic here.
-        game.physics.arcade.collide(player, platforms);
+        this.game.physics.arcade.collide(this.player, platforms);
+        this.game.physics.arcade.collide(this.player, this.groundLayer);
+        this.game.physics.arcade.collide(this.player, this.blockLayer);
     },
     gameOverScreen: function() {
         // this.game.state.start parameters: 
