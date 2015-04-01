@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="32" tilewidth="32" tileheight="32" nextobjectid="3">
+ <tileset firstgid="1" name="simples_pimples_32px" tilewidth="32" tileheight="32">
+  <image source="simples_pimples_32px.png" trans="5a5268" width="1600" height="2560"/>
+ </tileset>
+ <layer name="Ground" width="64" height="32">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3PAQkAAAjAMC1k/3i2ENENHuARAADAF5WzbePf/+d/AAAA4L4GqMUSxAAgAAA=
+  </data>
+ </layer>
+ <layer name="Blocks" width="64" height="32">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3QsQkAIBAEwe+/M2syEQNBBPVTZSbe5C4CAICuJJtM95q+qcZ522hu3WvmXbtta/PbBwAAAADAHxr6h/v6ACAAAA==
+  </data>
+ </layer>
+ <objectgroup name="Items">
+  <object id="1" gid="653" x="492" y="287"/>
+  <object id="2" gid="653" x="333" y="380"/>
+ </objectgroup>
+</map>
