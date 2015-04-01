@@ -1,6 +1,7 @@
 // preload assets
+var Preload = function(game) {
 
-var Preload = function(game) {}
+};
 
 Preload.prototype = {
     preload: function() {
@@ -17,4 +18,4 @@ Preload.prototype = {
         console.log("preload");
         this.game.state.start("StartMenu");
     }
-}
+};
