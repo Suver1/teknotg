@@ -50,11 +50,7 @@ Level01.prototype = {
         this.game.physics.arcade.collide(this.player, platforms);
         this.game.physics.arcade.collide(this.player, this.groundLayer, this.playerTouchGround, undefined, this);
         this.game.physics.arcade.collide(this.player, this.blockLayer, this.playerTouchGround, undefined, this);
-
-
-        if ((this.cursors.up.isDown) && this.player.isInAir === false) {
-        }
-
+        
     },
     render: function() {
         if (this.game.debugMode) {
