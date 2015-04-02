@@ -1,7 +1,8 @@
 var Level01 = function(game) { };
 
 Level01.prototype = {
-    create: function(score) {
+    create: function(game, score) {
+        console.log(game, score);
         //this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 
         var jump = false;
@@ -48,8 +49,7 @@ Level01.prototype = {
         this.game.input.onDown.add(this.jump, this);
         this.cursors.up.onDown.add(this.jump, this);
 
-        if (score)
-            this.score = score;
+        this.score = score ? score : 0;
 
         this.createItems();
 
@@ -60,7 +60,7 @@ Level01.prototype = {
         this.game.physics.arcade.collide(this.player, platforms);
         this.game.physics.arcade.collide(this.player, this.groundLayer, this.playerTouchGround, undefined, this);
         this.game.physics.arcade.collide(this.player, this.blockLayer, this.playerTouchGround, undefined, this);
-        this.game.physics.arcade.overlap(this.player, this.items, this.playerPickupDiamond, undefined, this);
+        this.game.physics.arcade.overlap(this.player, this.items, this.playerOverlapItem, undefined, this);
 
         if (this.game.input.keyboard.isDown(Phaser.Keyboard.ESC)) {
             this.game.state.restart(true, false, this.score);
@@ -106,10 +106,41 @@ Level01.prototype = {
 
         this.items = this.game.add.group();
         this.items.enableBody = true;
-        this.map.objects['Items'].forEach(function(item) { var displayObject = self.items.create(item.x, item.y - self.map.tileHeight, item.properties.sprite); displayObject.height = displayObject.width = 32; return displayObject; });
+        this.map.objects['Items'].forEach(function(item) {
+            var displayObject = self.items.create(
+                item.x,
+                item.y - self.map.tileHeight,
+                item.properties.sprite
+            );
+
+            displayObject.height = displayObject.width = 32;
+            Object.keys(item.properties).forEach(function(key) {
+                displayObject[key] = item.properties[key];
+            });
+
+            displayObject.destroyOnOverlap = displayObject.destroyOnOverlap != 'false';
+            displayObject.itemType = item.type;
+        });
     },
     playerPickupDiamond: function(player, diamond) {
         diamond.destroy();
         this.score++;
+    },
+    playerOverlapItem: function(player, item) {
+        console.log(this);
+        if (item.onOverlap)
+            return item.onOverlap.call(this, player, item);
+
+        switch(item.itemType) {
+        case 'diamond':
+            this.score++;
+            break;
+        case 'flag':
+            this.game.state.start("GameOver", true, false, this.score);
+            break;
+        }
+
+        if (item.destroyOnOverlap)
+            item.destroy();
     }
 };

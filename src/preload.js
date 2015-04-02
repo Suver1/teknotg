@@ -14,6 +14,7 @@ Preload.prototype = {
         this.game.load.image("platform", "assets/platform.png");
         this.game.load.atlasJSONHash("player1", "assets/pgmanSprite.png", "assets/pgman.json");
         this.game.load.image("diamond", "assets/diamond.png");
+        this.game.load.image("flag", "assets/flag.png");
 
     },
     create: function() {
