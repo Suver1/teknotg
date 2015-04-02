@@ -3,23 +3,30 @@
 
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="/css/teknotg.css">
+        <script type="text/javascript" src="/phaser.min.js"></script>
+        <script type="text/javascript" src="/src/boot.js"></script>
+        <script type="text/javascript" src="/src/preload.js"></script>
+        <script type="text/javascript" src="/src/startmenu.js"></script>
+        <script type="text/javascript" src="/src/level01.js"></script>
+        <script type="text/javascript" src="/src/gameover.js"></script>
+        <script type="text/javascript" src="/src/teknotg.js"></script>
         <title>Time as a tool</title>
-        <script type="text/javascript" src="phaser.min.js"></script>
-        <script type="text/javascript" src="src/boot.js"></script>
-        <script type="text/javascript" src="src/preload.js"></script>
-        <script type="text/javascript" src="src/startmenu.js"></script>
-        <script type="text/javascript" src="src/level01.js"></script>
-        <script type="text/javascript" src="src/gameover.js"></script>
-        <script type="text/javascript" src="src/teknotg.js"></script>
-        <style type="text/css">
-            body {
-                margin: 0;
-            }
-        </style>
     </head>
 
     <body>
         <h4>Laster...</h4>
+        <div class="start-menu hidden" id="start-menu">
+            <button class="button red" id="button-play">
+                Start
+            </button>
+            <button class="button green" id="button-mute">
+                Mute music
+            </button>
+            <button class="button blue" id="button-derp">
+                Hei, jeg er en knapp
+            </button>
+        </div>
     </body>
 
 </html>

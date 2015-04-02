@@ -1,9 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     var container = document.createElement('div');
     container.classList.add('phaser-container');
-    container.style.position = 'absolute';
-    container.style.top = 0;
-    container.style.height = '100%';
     document.body.appendChild(container);
     var width = window.innerHeight*(16/9);
     game = new Phaser.Game(width, window.innerHeight, Phaser.AUTO, container);

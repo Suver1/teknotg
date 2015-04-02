@@ -5,9 +5,20 @@ var StartMenu = function(game) {
 
 StartMenu.prototype = {
     create: function() {
+        /*
         var muteButton = this.game.add.button(50, 50, "star", this.muteSound, this);
         var playButton = this.game.add.button(100, 100, "star", this.playTheGame, this);
+        */
         // Input setup
+        var startMenuElm = document.getElementById('start-menu'),
+            btnPlay = document.getElementById('button-play'),
+            btnMute = document.getElementById('button-mute'),
+            btnDerp = document.getElementById('button-derp');
+
+        startMenuElm.classList.remove('hidden');
+        btnPlay.addEventListener('click', this.playTheGame.bind(this));
+        btnMute.addEventListener('click', this.muteSound.bind(this));
+        btnDerp.addEventListener('click', function(e) { console.log('Derp'); });
     },
     render: function() {
         if (this.game.debugMode) {
@@ -15,6 +26,9 @@ StartMenu.prototype = {
         }
     },
     playTheGame: function() {
+        var startMenuElm = document.getElementById('start-menu');
+        startMenuElm.classList.add('hidden');
+
         this.game.state.start("Level01");
     },
     muteSound: function() {
