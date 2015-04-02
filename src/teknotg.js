@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     container.classList.add('phaser-container');
     document.body.appendChild(container);
     var width = window.innerHeight*(16/9);
-    game = new Phaser.Game(width, window.innerHeight, Phaser.AUTO, container);
+    game = new Phaser.Game(width, window.innerHeight, Phaser.CANVAS, container);
     game.debugMode = true;
 
     game.state.add("Boot", Boot);
