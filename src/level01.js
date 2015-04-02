@@ -74,8 +74,9 @@ Level01.prototype = {
             deltaY = player.position.y - ground.worldY;
 
         var radians = Math.atan2(deltaY, deltaX);
-        if (!(radians > -(Math.PI*5/6) && radians < -(Math.PI/6)))
-            this.game.state.restart(true, false, this.score);
+        // Deactivate killing because too hard
+        //if (!(radians > -(Math.PI*5/6) && radians < -(Math.PI/6)))
+            //this.game.state.restart(true, false, this.score);
     },
     jump: function(context, pointerEvent) {
         if (this.player.isInAir === false) {
