@@ -4,6 +4,8 @@ Level01.prototype = {
     create: function(score) {
         //this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 
+        start_score();
+
         var jump = false;
         console.log("Level 01");
         var gameOver = this.game.add.button(this.game.width / 2, this.game.height / 2, "star", this.gameOverScreen, this);
@@ -64,6 +66,8 @@ Level01.prototype = {
 
         if (this.game.input.keyboard.isDown(Phaser.Keyboard.ESC)) {
             this.game.state.restart(true, false, this.score);
+            // Untill gameover works
+            send_score();
         }
     },
     render: function() {
@@ -111,5 +115,6 @@ Level01.prototype = {
     playerPickupDiamond: function(player, diamond) {
         diamond.destroy();
         this.score++;
+        update_score();
     }
 };

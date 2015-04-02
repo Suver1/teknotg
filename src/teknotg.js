@@ -17,6 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setTimeout(function() {
         document.getElementById("button-play").focus();
+    }, 500);
+    setTimeout(function() {
+        document.getElementById("button-play").focus();
     }, 1000);
 
 });
