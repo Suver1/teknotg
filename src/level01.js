@@ -1,8 +1,7 @@
 var Level01 = function(game) { };
 
 Level01.prototype = {
-    create: function(game, score) {
-        console.log(game, score);
+    create: function(game) {
         //this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 
         var jump = false;
@@ -49,8 +48,6 @@ Level01.prototype = {
         this.game.input.onDown.add(this.jump, this);
         this.cursors.up.onDown.add(this.jump, this);
 
-        this.score = score ? score : 0;
-
         this.createItems();
 
     },
@@ -63,7 +60,9 @@ Level01.prototype = {
         this.game.physics.arcade.overlap(this.player, this.items, this.playerOverlapItem, undefined, this);
 
         if (this.game.input.keyboard.isDown(Phaser.Keyboard.ESC)) {
-            this.game.state.restart(true, false, this.score);
+            this.game.state.restart(true, false, this.scoreManager.getScore());
+            // Untill gameover works
+            this.game.scoreManager.sendScore();
         }
     },
     render: function() {
@@ -82,7 +81,7 @@ Level01.prototype = {
         // 2. clearWorld (default true) clears the World display list fully (but not the Stage, so if you have added your own objects to the Stage they will need managing directly).
         // 3. clearCache (default false) clears all loaded assets.
         // 4. All other parameters from the fourth are variables that will be passed to the init function (if it has one). We pass the score to the GameOver state.
-        this.game.state.start("GameOver", true, false, this.score);
+        this.game.state.start("GameOver", true, false, this.game.scoreManager.currentScore);
     },
     playerTouchGround: function(player, ground) {
 
@@ -122,21 +121,16 @@ Level01.prototype = {
             displayObject.itemType = item.type;
         });
     },
-    playerPickupDiamond: function(player, diamond) {
-        diamond.destroy();
-        this.score++;
-    },
     playerOverlapItem: function(player, item) {
-        console.log(this);
         if (item.onOverlap)
             return item.onOverlap.call(this, player, item);
 
         switch(item.itemType) {
         case 'diamond':
-            this.score++;
+            this.game.scoreManager.incrementScore();
             break;
         case 'flag':
-            this.game.state.start("GameOver", true, false, this.score);
+            this.gameOverScreen();
             break;
         }
 
