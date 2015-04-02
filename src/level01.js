@@ -76,15 +76,15 @@ Level01.prototype = {
         this.game.state.start("GameOver", true, false, this.score);
     },
     playerTouchGround: function(player, ground) {
-        player.isInAir = false;
 
         var deltaX = player.position.x - ground.worldX,
             deltaY = player.position.y - ground.worldY;
 
         var radians = Math.atan2(deltaY, deltaX);
         // Deactivate killing because too hard
-        //if (!(radians > -(Math.PI*5/6) && radians < -(Math.PI/6)))
-            //this.game.state.restart(true, false, this.score);
+        if ((radians > -(Math.PI*5/6) && radians < -(Math.PI/6))) {
+            player.isInAir = false;
+        }
     },
     jump: function(context, pointerEvent) {
         if (this.player.isInAir === false) {
