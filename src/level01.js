@@ -9,7 +9,7 @@ Level01.prototype = {
         var gameOver = this.game.add.button(this.game.width / 2, this.game.height / 2, "star", this.gameOverScreen, this);
         // Set world dimensions
         // TODO replace last two parameters with the maps width.
-        this.game.world.setBounds(-300, -300, 2000, 2000);
+        this.game.world.setBounds(-300, -300, 20000, 2000);
 
         this.map = this.game.add.tilemap('teknotg_testlevel02');
         this.map.addTilesetImage('simples_pimples_32px', 'simples_pimples_32px');
@@ -35,9 +35,7 @@ Level01.prototype = {
         this.player.isInAir = true; //Maybe remove if player starts on ground
 
         // Camera setup - Camera stops following player when it hits world bounds.
-        //this.game.camera.follow(this.player, Phaser.Camera.FOLLOW_TOPDOWN_TIGHT);
         this.game.camera.target = this.player;
-        //this.game.camera.deadzone = new Phaser.Rectangle(100, 400, 20000, 300);
         this.game.camera.height = this.game.height * 1.5;
         this.game.camera.width = this.game.width / 4;
 
@@ -63,12 +61,16 @@ Level01.prototype = {
         this.game.physics.arcade.collide(this.player, this.groundLayer, this.playerTouchGround, undefined, this);
         this.game.physics.arcade.collide(this.player, this.blockLayer, this.playerTouchGround, undefined, this);
         this.game.physics.arcade.overlap(this.player, this.items, this.playerPickupDiamond, undefined, this);
+
+        if (this.game.input.keyboard.isDown(Phaser.Keyboard.ESC)) {
+            this.game.state.restart(true, false, this.score);
+        }
     },
     render: function() {
         if (this.game.debugMode) {
             this.game.debug.text('fps: ' + this.game.time.fps, 0, 17, '#00FF00');
 
-            // Camera deadzone
+            // Camera deadzone (context require Phaser.CANVAS)
             //var zone = this.game.camera.deadzone;
             //this.game.context.fillStyle = 'rgba(255, 0, 0, 0.5)';
             //this.game.context.fillRect(zone.x, zone.y, zone.width, zone.height);
