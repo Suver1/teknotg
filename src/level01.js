@@ -2,6 +2,8 @@ var Level01 = function(game) { };
 
 Level01.prototype = {
     create: function(score) {
+        //this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+
         var jump = false;
         console.log("Level 01");
         var gameOver = this.game.add.button(this.game.width / 2, this.game.height / 2, "star", this.gameOverScreen, this);
@@ -33,10 +35,13 @@ Level01.prototype = {
         this.player.isInAir = true; //Maybe remove if player starts on ground
 
         // Camera setup - Camera stops following player when it hits world bounds.
-        this.game.camera.follow(this.player);
-        this.game.camera.deadzone = new Phaser.Rectangle(100, 470, 400, 150);
-        //this.game.camera.height = this.game.height * 1.5;
-        //this.game.camera.width = this.game.width / 4;
+        this.game.camera.target = this.player;
+        this.game.camera.height = this.game.height * 1.5;
+        this.game.camera.width = this.game.width / 4;
+
+        var camera = this.game.camera;
+        helper = Math.max(camera.width, camera.height) / 12;
+        this.game.camera.deadzone = new Phaser.Rectangle((camera.width - helper) / 2, (camera.height - helper) / 2, helper, helper);
 
         // Input setup
         this.cursors = game.input.keyboard.createCursorKeys();
@@ -65,10 +70,10 @@ Level01.prototype = {
         if (this.game.debugMode) {
             this.game.debug.text('fps: ' + this.game.time.fps, 0, 17, '#00FF00');
 
-            // Camera deadzone
-            var zone = this.game.camera.deadzone;
-            this.game.context.fillStyle = 'rgba(255, 0, 0, 0.5)';
-            this.game.context.fillRect(zone.x, zone.y, zone.width, zone.height);
+            // Camera deadzone (context require Phaser.CANVAS)
+            //var zone = this.game.camera.deadzone;
+            //this.game.context.fillStyle = 'rgba(255, 0, 0, 0.5)';
+            //this.game.context.fillRect(zone.x, zone.y, zone.width, zone.height);
         }
     },
     gameOverScreen: function() {
