@@ -117,7 +117,6 @@ Level01.prototype = {
                 displayObject[key] = item.properties[key];
             });
 
-            displayObject.destroyOnOverlap = displayObject.destroyOnOverlap != 'false';
             displayObject.itemType = item.type;
         });
     },
@@ -128,13 +127,11 @@ Level01.prototype = {
         switch(item.itemType) {
         case 'diamond':
             this.game.scoreManager.incrementScore();
+            item.destroy();
             break;
         case 'flag':
             this.gameOverScreen();
             break;
         }
-
-        if (item.destroyOnOverlap)
-            item.destroy();
     }
 };
