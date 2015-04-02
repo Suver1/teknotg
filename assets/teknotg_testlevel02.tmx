@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="128" height="16" tilewidth="32" tileheight="32" nextobjectid="9">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="128" height="16" tilewidth="32" tileheight="32" nextobjectid="13">
  <tileset firstgid="1" name="simples_pimples_32px" tilewidth="32" tileheight="32">
   <image source="simples_pimples_32px.png" trans="5a5268" width="1600" height="2560"/>
  </tileset>
@@ -14,39 +14,45 @@
   </data>
  </layer>
  <objectgroup name="Items">
-  <object id="1" gid="653" x="494.667" y="286.333">
+  <object id="1" type="diamond" gid="653" x="494.667" y="286.333">
    <properties>
     <property name="sprite" value="diamond"/>
    </properties>
   </object>
-  <object id="3" gid="653" x="337.333" y="380.667">
+  <object id="3" type="diamond" gid="653" x="337.333" y="380.667">
    <properties>
     <property name="sprite" value="diamond"/>
    </properties>
   </object>
-  <object id="4" gid="653" x="1221.33" y="245.333">
+  <object id="4" type="diamond" gid="653" x="1221.33" y="245.333">
    <properties>
     <property name="sprite" value="diamond"/>
    </properties>
   </object>
-  <object id="5" gid="653" x="1286.67" y="245.333">
+  <object id="5" type="diamond" gid="653" x="1286.67" y="245.333">
    <properties>
     <property name="sprite" value="diamond"/>
    </properties>
   </object>
-  <object id="6" gid="653" x="1356" y="244">
+  <object id="6" type="diamond" gid="653" x="1356" y="244">
    <properties>
     <property name="sprite" value="diamond"/>
    </properties>
   </object>
-  <object id="7" gid="653" x="1436" y="245.333">
+  <object id="7" type="diamond" gid="653" x="1436" y="245.333">
    <properties>
     <property name="sprite" value="diamond"/>
    </properties>
   </object>
-  <object id="8" gid="653" x="2034.67" y="-29.3333">
+  <object id="8" type="diamond" gid="653" x="2034.67" y="-29.3333">
    <properties>
+    <property name="destroyOnOverlap" value="false"/>
     <property name="sprite" value="diamond"/>
+   </properties>
+  </object>
+  <object id="10" type="flag" gid="854" x="2402.67" y="368">
+   <properties>
+    <property name="sprite" value="flag"/>
    </properties>
   </object>
  </objectgroup>
