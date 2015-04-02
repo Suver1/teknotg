@@ -7,7 +7,7 @@ Level01.prototype = {
         var gameOver = this.game.add.button(this.game.width / 2, this.game.height / 2, "star", this.gameOverScreen, this);
         // Set world dimensions
         // TODO replace last two parameters with the maps width.
-        this.game.world.setBounds(0, 0, 2000, 2000);
+        this.game.world.setBounds(-300, -300, 2000, 2000);
 
         this.map = this.game.add.tilemap('teknotg_testlevel02');
         this.map.addTilesetImage('simples_pimples_32px', 'simples_pimples_32px');
@@ -34,6 +34,9 @@ Level01.prototype = {
 
         // Camera setup - Camera stops following player when it hits world bounds.
         this.game.camera.follow(this.player);
+        //this.game.camera.deadzone = new Phaser.Rectangle(100, 400, 20000, 300);
+        this.game.camera.height = this.game.height * 1.5;
+        this.game.camera.width = this.game.width / 4;
 
         // Input setup
         this.cursors = game.input.keyboard.createCursorKeys();
@@ -57,6 +60,11 @@ Level01.prototype = {
     render: function() {
         if (this.game.debugMode) {
             this.game.debug.text('fps: ' + this.game.time.fps, 0, 17, '#00FF00');
+
+            // Camera deadzone
+            //var zone = this.game.camera.deadzone;
+            //this.game.context.fillStyle = 'rgba(255, 0, 0, 0.5)';
+            //this.game.context.fillRect(zone.x, zone.y, zone.width, zone.height);
         }
     },
     gameOverScreen: function() {
