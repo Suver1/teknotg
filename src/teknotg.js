@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
+
     var container = document.createElement('div');
+    var width = window.innerHeight * (16 / 9);
+
     container.classList.add('phaser-container');
     document.body.appendChild(container);
     var width = window.innerHeight*(16/9);
@@ -12,4 +15,10 @@ document.addEventListener('DOMContentLoaded', function() {
     game.state.add("Level01", Level01);
     game.state.add("GameOver", GameOver);
     game.state.start("Boot");
+
+
+    setTimeout(function() {
+        document.getElementById("button-play").focus();
+    }, 1000);
+
 });
