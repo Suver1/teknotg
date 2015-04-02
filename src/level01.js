@@ -74,7 +74,7 @@ Level01.prototype = {
             deltaY = player.position.y - ground.worldY;
 
         var radians = Math.atan2(deltaY, deltaX);
-        if (!(radians > -(5*Math.PI/6) && radians < -(Math.PI/6)))
+        if (!(radians > -(Math.PI*5/6) && radians < -(Math.PI/6)))
             this.game.state.restart(true, false, this.score);
     },
     jump: function(context, pointerEvent) {
@@ -88,7 +88,7 @@ Level01.prototype = {
 
         this.items = this.game.add.group();
         this.items.enableBody = true;
-        this.map.objects['Items'].forEach(function(item) { var displayObject = self.items.create(item.x, item.y - self.map.tileHeight, 'diamond'); displayObject.height = displayObject.width = 32; return displayObject; });
+        this.map.objects['Items'].forEach(function(item) { var displayObject = self.items.create(item.x, item.y - self.map.tileHeight, item.properties.sprite); displayObject.height = displayObject.width = 32; return displayObject; });
     },
     playerPickupDiamond: function(player, diamond) {
         diamond.destroy();

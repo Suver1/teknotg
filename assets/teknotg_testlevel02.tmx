@@ -1,20 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="32" tilewidth="32" tileheight="32" nextobjectid="3">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="32" tilewidth="32" tileheight="32" nextobjectid="8">
  <tileset firstgid="1" name="simples_pimples_32px" tilewidth="32" tileheight="32">
   <image source="simples_pimples_32px.png" trans="5a5268" width="1600" height="2560"/>
  </tileset>
  <layer name="Ground" width="64" height="32">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3PAQkAAAjAMC1k/3i2ENENHuARAADAF5WzbePf/+d/AAAA4L4GqMUSxAAgAAA=
+   H4sIAAAAAAAAC+3DAQ0AAAgDoFvI/vHs4WEjAQAAWuyorQEAAID/Dm+KfpsAIAAA
   </data>
  </layer>
  <layer name="Blocks" width="64" height="32">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3QsQkAIBAEwe+/M2syEQNBBPVTZSbe5C4CAICuJJtM95q+qcZ522hu3WvmXbtta/PbBwAAAADAHxr6h/v6ACAAAA==
+   H4sIAAAAAAAAC+3SQQrAIAwEwPz/Z176oV6kh4IIaikUtcxAbgtxJREArCQNBv5s9v0/2fH2LUc1q7k6ndHvdmdGud2UvVrd6swXfzD7/gEAAACA/WXbVc41ACAAAA==
   </data>
  </layer>
  <objectgroup name="Items">
-  <object id="1" gid="653" x="492" y="287"/>
-  <object id="2" gid="653" x="333" y="380"/>
+  <object id="1" gid="653" x="494.667" y="286.333">
+   <properties>
+    <property name="sprite" value="diamond"/>
+   </properties>
+  </object>
+  <object id="3" gid="653" x="337.333" y="380.667">
+   <properties>
+    <property name="sprite" value="diamond"/>
+   </properties>
+  </object>
+  <object id="4" gid="653" x="1221.33" y="245.333">
+   <properties>
+    <property name="sprite" value="diamond"/>
+   </properties>
+  </object>
+  <object id="5" gid="653" x="1286.67" y="245.333">
+   <properties>
+    <property name="sprite" value="diamond"/>
+   </properties>
+  </object>
+  <object id="6" gid="653" x="1356" y="244">
+   <properties>
+    <property name="sprite" value="diamond"/>
+   </properties>
+  </object>
+  <object id="7" gid="653" x="1436" y="245.333">
+   <properties>
+    <property name="sprite" value="diamond"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
