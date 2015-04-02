@@ -6,7 +6,24 @@ document.addEventListener('DOMContentLoaded', function() {
     container.classList.add('phaser-container');
     document.body.appendChild(container);
 
-    game = new Phaser.Game(width, window.innerHeight, Phaser.AUTO, container);
+    var windowRatio = window.innerWidth / window.innerHeight;
+    var width, height;
+
+    /*
+    if (windowRatio > 1.5) {
+        width = Math.floor(window.innerHeight*(16/9));
+        height = Math.floor(window.innerHeight);
+    } else {
+        width = Math.floor(window.innerWidth);
+        height = Math.floor(window.innerWidth/(16/9));;
+    }
+    */
+
+    width = 800;
+    height = 450;
+
+    console.log('Width: ' + width + ', height: ' + height);
+    game = new Phaser.Game(width, height, Phaser.AUTO, container);
     game.debugMode = true;
 
     game.state.add("Boot", Boot);

@@ -2,6 +2,8 @@ var Level01 = function(game) { };
 
 Level01.prototype = {
     create: function(score) {
+        //this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+
         var jump = false;
         console.log("Level 01");
         var gameOver = this.game.add.button(this.game.width / 2, this.game.height / 2, "star", this.gameOverScreen, this);
@@ -33,10 +35,15 @@ Level01.prototype = {
         this.player.isInAir = true; //Maybe remove if player starts on ground
 
         // Camera setup - Camera stops following player when it hits world bounds.
-        this.game.camera.follow(this.player);
+        //this.game.camera.follow(this.player, Phaser.Camera.FOLLOW_TOPDOWN_TIGHT);
+        this.game.camera.target = this.player;
         //this.game.camera.deadzone = new Phaser.Rectangle(100, 400, 20000, 300);
         this.game.camera.height = this.game.height * 1.5;
         this.game.camera.width = this.game.width / 4;
+
+        var camera = this.game.camera;
+        helper = Math.max(camera.width, camera.height) / 12;
+        this.game.camera.deadzone = new Phaser.Rectangle((camera.width - helper) / 2, (camera.height - helper) / 2, helper, helper);
 
         // Input setup
         this.cursors = game.input.keyboard.createCursorKeys();

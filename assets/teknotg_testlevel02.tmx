@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="32" tilewidth="32" tileheight="32" nextobjectid="8">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="128" height="16" tilewidth="32" tileheight="32" nextobjectid="9">
  <tileset firstgid="1" name="simples_pimples_32px" tilewidth="32" tileheight="32">
   <image source="simples_pimples_32px.png" trans="5a5268" width="1600" height="2560"/>
  </tileset>
- <layer name="Ground" width="64" height="32">
+ <layer name="Ground" width="128" height="16">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3DAQ0AAAgDoFvI/vHs4WEjAQAAWuyorQEAAID/Dm+KfpsAIAAA
+   H4sIAAAAAAAAC+3DAQ0AAAgDoFvI/vHeQ2EjAQAAAAAArtlRVb8tlT5nygAgAAA=
   </data>
  </layer>
- <layer name="Blocks" width="64" height="32">
+ <layer name="Blocks" width="128" height="16">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3SQQrAIAwEwPz/Z176oV6kh4IIaikUtcxAbgtxJREArCQNBv5s9v0/2fH2LUc1q7k6ndHvdmdGud2UvVrd6swXfzD7/gEAAACA/WXbVc41ACAAAA==
+   H4sIAAAAAAAAC+3UMQqAMAwF0N7/Zi5eyEU6CBKoFaFo6nuQLVN/80v5pzUMMLfWzesCmIubzm3pDFTxzt065Kf/33XnjZ9moa+/rWa6letsj53eHrmcc21lG3dG/AH9DwAwxg4mc7axACAAAA==
   </data>
  </layer>
  <objectgroup name="Items">
@@ -40,6 +40,11 @@
    </properties>
   </object>
   <object id="7" gid="653" x="1436" y="245.333">
+   <properties>
+    <property name="sprite" value="diamond"/>
+   </properties>
+  </object>
+  <object id="8" gid="653" x="2034.67" y="-29.3333">
    <properties>
     <property name="sprite" value="diamond"/>
    </properties>
