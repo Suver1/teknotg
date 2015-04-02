@@ -29,9 +29,9 @@ Level01.prototype = {
         ground.body.immovable = true;
 
         // Player setup
-        this.player = this.game.add.sprite(150, 150, "player1");
+        this.player = this.game.add.sprite(20, 300, "player1");
         this.game.physics.arcade.enable(this.player);
-        this.player.body.gravity.y = 600;
+        this.player.body.gravity.y = 2500;
         this.player.isInAir = true; //Maybe remove if player starts on ground
 
         // Camera setup - Camera stops following player when it hits world bounds.
@@ -53,7 +53,7 @@ Level01.prototype = {
     },
     update: function() {
         // runs every frame. insert game logic here.
-        this.player.body.velocity.x = 150;
+        this.player.body.velocity.x = 450;
         this.game.physics.arcade.collide(this.player, platforms);
         this.game.physics.arcade.collide(this.player, this.groundLayer, this.playerTouchGround, undefined, this);
         this.game.physics.arcade.collide(this.player, this.blockLayer, this.playerTouchGround, undefined, this);
@@ -96,7 +96,7 @@ Level01.prototype = {
     },
     jump: function(context, pointerEvent) {
         if (this.player.isInAir === false) {
-            this.player.body.velocity.y = -350;
+            this.player.body.velocity.y = -650;
             this.player.isInAir = true;
         }
     },
@@ -132,6 +132,13 @@ Level01.prototype = {
         case 'flag':
             this.gameOverScreen();
             break;
+        case 'kill':
+            this.restartLevel();
+            break;
         }
+    },
+    restartLevel: function() {
+        this.game.scoreManager.resetScore();
+        this.game.state.restart(true, false);
     }
 };

@@ -13,6 +13,11 @@ ScoreManager.prototype.incrementScore = function() {
     this.currentScore++;
 }
 
+// Reset score
+ScoreManager.prototype.resetScore = function() {
+    this.currentScore = 0;
+}
+
 // Verifies and sends the final score
 ScoreManager.prototype.sendScore = function() {
     console.log('sending score');
