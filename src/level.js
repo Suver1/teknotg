@@ -48,7 +48,10 @@ Level.prototype.create = function(game) {
     this.createItems();
 
     this.coinSound = this.game.add.audio('coin');
+    this.coinSound.volume = 0.2;
     this.timeStarted = Date.now();
+    this.timeElapsedText = this.game.add.text(700, 20, (Date.now() - this.timeStarted)/1000, {fill: '#ffffff'});
+    this.timeElapsedText.fixedToCamera = true;
 };
 
 Level.prototype.update = function() {
@@ -64,6 +67,7 @@ Level.prototype.update = function() {
     }
 };
 Level.prototype.render = function() {
+    this.timeElapsedText.setText((Date.now() - this.timeStarted)/1000);
     if (this.game.debugMode) {
         this.game.debug.text('fps: ' + this.game.time.fps, 0, 17, '#00FF00');
         this.game.debug.text('speed: ' + this.player.body.velocity.x, 0, 32, '#00FF00');
