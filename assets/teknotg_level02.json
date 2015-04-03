@@ -40,8 +40,8 @@
                  "type":"flag",
                  "visible":true,
                  "width":0,
-                 "x":1354,
-                 "y":257
+                 "x":3801,
+                 "y":384
                 }, 
                 {
                  "gid":20,
@@ -74,6 +74,118 @@
                  "width":0,
                  "x":1156,
                  "y":280
+                }, 
+                {
+                 "gid":20,
+                 "height":0,
+                 "id":22,
+                 "name":"",
+                 "properties":
+                    {
+                     "sprite":"clock"
+                    },
+                 "rotation":0,
+                 "type":"speed",
+                 "visible":true,
+                 "width":0,
+                 "x":1342,
+                 "y":252
+                }, 
+                {
+                 "gid":20,
+                 "height":0,
+                 "id":23,
+                 "name":"",
+                 "properties":
+                    {
+                     "sprite":"clock"
+                    },
+                 "rotation":0,
+                 "type":"speed",
+                 "visible":true,
+                 "width":0,
+                 "x":1737,
+                 "y":189
+                }, 
+                {
+                 "gid":21,
+                 "height":0,
+                 "id":24,
+                 "name":"",
+                 "properties":
+                    {
+                     "sprite":"arrowBack"
+                    },
+                 "rotation":0,
+                 "type":"kill",
+                 "visible":true,
+                 "width":0,
+                 "x":2207,
+                 "y":144
+                }, 
+                {
+                 "gid":20,
+                 "height":0,
+                 "id":25,
+                 "name":"",
+                 "properties":
+                    {
+                     "sprite":"clock"
+                    },
+                 "rotation":0,
+                 "type":"speed",
+                 "visible":true,
+                 "width":0,
+                 "x":2480,
+                 "y":193
+                }, 
+                {
+                 "gid":20,
+                 "height":0,
+                 "id":26,
+                 "name":"",
+                 "properties":
+                    {
+                     "sprite":"clock"
+                    },
+                 "rotation":0,
+                 "type":"speed",
+                 "visible":true,
+                 "width":0,
+                 "x":3026,
+                 "y":225
+                }, 
+                {
+                 "gid":20,
+                 "height":0,
+                 "id":27,
+                 "name":"",
+                 "properties":
+                    {
+                     "sprite":"clock"
+                    },
+                 "rotation":0,
+                 "type":"speed",
+                 "visible":true,
+                 "width":0,
+                 "x":3248,
+                 "y":348
+                }, 
+                {
+                 "gid":21,
+                 "height":0,
+                 "id":28,
+                 "name":"",
+                 "properties":
+                    {
+                     "sprite":"arrowBack"
+                    },
+                 "rotation":0,
+                 "type":"kill",
+                 "visible":true,
+                 "width":0,
+                 "x":3501,
+                 "y":380
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -82,7 +194,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":22,
+ "nextobjectid":31,
  "orientation":"orthogonal",
  "properties":
     {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="128" height="16" tilewidth="32" tileheight="32" nextobjectid="22">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="128" height="16" tilewidth="32" tileheight="32" nextobjectid="31">
  <tileset firstgid="1" name="iTideSprites" tilewidth="32" tileheight="32">
   <image source="iTideSprites.png" width="192" height="192"/>
  </tileset>
@@ -14,7 +14,7 @@
   </data>
  </layer>
  <objectgroup name="Items">
-  <object id="19" type="flag" gid="19" x="1354" y="257">
+  <object id="19" type="flag" gid="19" x="3801" y="384">
    <properties>
     <property name="sprite" value="flag"/>
    </properties>
@@ -25,6 +25,41 @@
    </properties>
   </object>
   <object id="21" type="kill" gid="21" x="1156" y="280">
+   <properties>
+    <property name="sprite" value="arrowBack"/>
+   </properties>
+  </object>
+  <object id="22" type="speed" gid="20" x="1342" y="252">
+   <properties>
+    <property name="sprite" value="clock"/>
+   </properties>
+  </object>
+  <object id="23" type="speed" gid="20" x="1737" y="189">
+   <properties>
+    <property name="sprite" value="clock"/>
+   </properties>
+  </object>
+  <object id="24" type="kill" gid="21" x="2207" y="144">
+   <properties>
+    <property name="sprite" value="arrowBack"/>
+   </properties>
+  </object>
+  <object id="25" type="speed" gid="20" x="2480" y="193">
+   <properties>
+    <property name="sprite" value="clock"/>
+   </properties>
+  </object>
+  <object id="26" type="speed" gid="20" x="3026" y="225">
+   <properties>
+    <property name="sprite" value="clock"/>
+   </properties>
+  </object>
+  <object id="27" type="speed" gid="20" x="3248" y="348">
+   <properties>
+    <property name="sprite" value="clock"/>
+   </properties>
+  </object>
+  <object id="28" type="kill" gid="21" x="3501" y="380">
    <properties>
     <property name="sprite" value="arrowBack"/>
    </properties>

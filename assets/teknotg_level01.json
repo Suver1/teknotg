@@ -40,7 +40,7 @@
                  "type":"flag",
                  "visible":true,
                  "width":0,
-                 "x":3134.67,
+                 "x":3162.67,
                  "y":383.667
                 }, 
                 {
@@ -72,8 +72,8 @@
                  "type":"speed",
                  "visible":true,
                  "width":0,
-                 "x":1021,
-                 "y":350.5
+                 "x":1025,
+                 "y":347.5
                 }, 
                 {
                  "gid":21,
@@ -88,8 +88,56 @@
                  "type":"kill",
                  "visible":true,
                  "width":0,
-                 "x":1506.5,
-                 "y":382.5
+                 "x":1504.5,
+                 "y":378.5
+                }, 
+                {
+                 "gid":20,
+                 "height":0,
+                 "id":30,
+                 "name":"",
+                 "properties":
+                    {
+                     "sprite":"clock"
+                    },
+                 "rotation":0,
+                 "type":"speed",
+                 "visible":true,
+                 "width":0,
+                 "x":518,
+                 "y":379.5
+                }, 
+                {
+                 "gid":20,
+                 "height":0,
+                 "id":31,
+                 "name":"",
+                 "properties":
+                    {
+                     "sprite":"clock"
+                    },
+                 "rotation":0,
+                 "type":"speed",
+                 "visible":true,
+                 "width":0,
+                 "x":1901,
+                 "y":259.5
+                }, 
+                {
+                 "gid":21,
+                 "height":0,
+                 "id":32,
+                 "name":"",
+                 "properties":
+                    {
+                     "sprite":"arrowBack"
+                    },
+                 "rotation":0,
+                 "type":"kill",
+                 "visible":true,
+                 "width":0,
+                 "x":2585.5,
+                 "y":379.5
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -98,7 +146,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":30,
+ "nextobjectid":33,
  "orientation":"orthogonal",
  "properties":
     {
