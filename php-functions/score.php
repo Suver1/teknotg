@@ -2,8 +2,6 @@
 
 if (isset($_POST['action']) && !empty($_POST['action'])) {
 
-    error_log($_POST['score'] . '\n', 3, 'error.log');
-
     $name = db_quote($_POST['name']);
     $score = db_quote($_POST['score']);
     $time_used = db_quote($_POST['time_used']);
