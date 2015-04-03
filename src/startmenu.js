@@ -5,22 +5,25 @@ var StartMenu = function(game) {
 
 StartMenu.prototype = {
     create: function() {
-        /*
-        var muteButton = this.game.add.button(50, 50, "star", this.muteSound, this);
-        var playButton = this.game.add.button(100, 100, "star", this.playTheGame, this);
-        */
         // Input setup
         var bg = this.game.add.sprite(0, 0, 'logo');
-        var startMenuElm = document.getElementById('start-menu'),
-            btnPlay = document.getElementById('button-play'),
-            btnMute = document.getElementById('button-mute'),
-            btnDerp = document.getElementById('button-derp');
 
-        startMenuElm.classList.remove('hidden');
-        btnPlay.addEventListener('click', this.playTheGame.bind(this));
-        btnMute.addEventListener('click', this.muteSound.bind(this));
-        btnDerp.addEventListener('click', function(e) { console.log('Derp'); });
-        window.addEventListener('keydown', this.onKeydown);
+        // Menu buttons
+        var startBtn = game.add.button(90, 200, 'buttonsSprite', this.playTheGame, this, 'StartBtnHighlight.png', 'StartBtn.png', 'StartBtn.png');
+        var highScoresBtn = game.add.button(90, 230, 'buttonsSprite', this.showHighScores, this, 'HightscoresBtnHightlight.png', 'HightscoresBtn.png', 'HightscoresBtn.png');
+        var muteSoundBtn = game.add.button(90, 265, 'buttonsSprite', this.muteSound, this, 'muteBtnHighlight.png', 'muteBtn.png', 'muteBtn.png');
+        if (window.innerWidth < 600) {
+            var scale = 1.5;
+            startBtn.scale.setTo(scale, scale);
+            startBtn.position.x = 70;
+            startBtn.position.y = 180;
+            highScoresBtn.scale.setTo(scale, scale);
+            highScoresBtn.position.x = 70;
+            highScoresBtn.position.y = 225;
+            muteSoundBtn.scale.setTo(scale, scale);
+            muteSoundBtn.position.x = 70;
+            muteSoundBtn.position.y = 280;
+        }
     },
     render: function() {
         if (this.game.debugMode) {
@@ -36,6 +39,9 @@ StartMenu.prototype = {
     },
     muteSound: function() {
         // mute all sound
+    },
+    showHighScores: function() {
+        // Display high scores
     },
     onKeydown: function(e) {
         if (e.keyCode == 13)
