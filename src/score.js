@@ -1,25 +1,59 @@
 // Functions for score and scoreboard
 var ScoreManager = function(initialScore) {
     this.currentScore = initialScore || 0;
-}
-
-// Checks the score midways to prevent cheaters
-ScoreManager.prototype.checkScore = function() {
-    console.log('checking score');
-}
+};
 
 // Untill there's something else we can use as score
 ScoreManager.prototype.incrementScore = function() {
     this.currentScore++;
-}
+    console.log(this.currentScore);
+};
 
 // Reset score
 ScoreManager.prototype.resetScore = function() {
     this.currentScore = 0;
-}
+};
+
+// Stores the score during the first seconds to prevent cheaters a little
+ScoreManager.prototype.checkScore = function() {
+    console.log('checkScore');
+};
 
 // Verifies and sends the final score
 ScoreManager.prototype.sendScore = function() {
-    console.log('sending score');
-    console.log(this.currentScore);
-}
+
+    reqwest({
+        url: 'php-functions/score.php',
+        method: 'POST',
+        data: {
+            action: 'sendScore',
+            name: 'derp',
+            score: this.currentScore,
+            time_used: '1'
+        },
+        success: function(output) {
+            console.log(output);
+        }
+    });
+
+};
+
+// Fetches the scores to be displayed in scoreboard
+ScoreManager.prototype.getScore = function() {
+
+    /*
+    reqwest({
+        url: 'php-functions/score.php',
+        method: 'GET',
+        type: 'JSON',
+        data: {
+            action: 'sendScore',
+            score: this.currentScore
+        },
+        success: function(output) {
+            console.log(output);
+        }
+    });
+     */
+
+};
