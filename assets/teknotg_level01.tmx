@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="128" height="16" tilewidth="32" tileheight="32" nextobjectid="15">
+ <tileset firstgid="1" name="simples_pimples_32px" tilewidth="32" tileheight="32">
+  <image source="simples_pimples_32px.png" trans="5a5268" width="1600" height="2560"/>
+ </tileset>
+ <layer name="Ground" width="128" height="16">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3XsQkAIRREQW3Imuy/CvMD0UQP3Bl4ickPNrIUAADgL62u4129ruNd9s9m/2z2z2b/bLf33/lv6F7frWdvp+5JkjIasWeM3wAgAAA=
+  </data>
+ </layer>
+ <layer name="Blocks" width="128" height="16">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3DQQkAAAgEsOvfzFaWuIfIBksAAAAAAOC+KQYA+GgBC24O+gAgAAA=
+  </data>
+ </layer>
+ <objectgroup name="Items">
+  <object id="1" type="diamond" gid="653" x="773.667" y="381.333">
+   <properties>
+    <property name="sprite" value="diamond"/>
+   </properties>
+  </object>
+  <object id="7" type="diamond" gid="653" x="1746" y="349.333">
+   <properties>
+    <property name="sprite" value="diamond"/>
+   </properties>
+  </object>
+  <object id="10" type="flag" gid="854" x="3158.67" y="379">
+   <properties>
+    <property name="sprite" value="flag"/>
+   </properties>
+  </object>
+  <object id="13" type="kill" gid="1101" x="1342" y="381">
+   <properties>
+    <property name="sprite" value="stop"/>
+   </properties>
+  </object>
+  <object id="14" type="kill" gid="1101" x="2168" y="350">
+   <properties>
+    <property name="sprite" value="stop"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

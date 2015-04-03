@@ -1,16 +1,15 @@
-var Level01 = function(game) { };
+var Level02 = function(game) { };
 
-Level01.prototype = {
+Level02.prototype = {
     create: function(game) {
-        console.log("Level 01");
+        console.log("Level 02");
 
         var jump = false;
-        //var gameOver = this.game.add.button(this.game.width / 2, this.game.height / 2, "star", this.gameOverScreen, this);
         // Set world dimensions
         // TODO replace last two parameters with the maps width.
         this.game.world.setBounds(-300, -300, 20000, 2000);
 
-        this.map = this.game.add.tilemap('level01');
+        this.map = this.game.add.tilemap('level02');
         this.map.addTilesetImage('simples_pimples_32px', 'simples_pimples_32px');
         //this.map.scale = {x: 2, y: 2};
 
@@ -22,12 +21,12 @@ Level01.prototype = {
         this.map.setCollisionBetween(1, 2000, true, this.blockLayer);
 
         // Player setup
-        this.player = this.game.add.sprite(80, 300, "player1");
+        this.player = this.game.add.sprite(20, 300, "player1");
         this.game.physics.arcade.enable(this.player);
         this.player.body.gravity.y = 2500;
         this.player.isInAir = true; //Maybe remove if player starts on ground
         this.player.runSpeed = 350;
-        this.player.incrementRunSpeed = 100;
+        this.player.incrementRunSpeed = 30;
 
         // Camera setup - Camera stops following player when it hits world bounds.
         this.game.camera.target = this.player;
@@ -56,6 +55,8 @@ Level01.prototype = {
 
         if (this.game.input.keyboard.isDown(Phaser.Keyboard.ESC)) {
             this.restartLevel();
+            // Untill gameover works
+            this.game.scoreManager.sendScore();
         }
     },
     render: function() {
@@ -75,9 +76,7 @@ Level01.prototype = {
         // 2. clearWorld (default true) clears the World display list fully (but not the Stage, so if you have added your own objects to the Stage they will need managing directly).
         // 3. clearCache (default false) clears all loaded assets.
         // 4. All other parameters from the fourth are variables that will be passed to the init function (if it has one). We pass the score to the GameOver state.
-        this.game.scoreManager.sendScore();
-        this.game.scoreManager.resetScore();
-        this.game.state.start("Level02", true, false);
+        this.game.state.start("GameOver", true, false, this.game.scoreManager.currentScore);
     },
     playerTouchGround: function(player, ground) {
         var deltaX = player.position.x - ground.worldX,
@@ -122,7 +121,7 @@ Level01.prototype = {
         case 'diamond':
             this.game.scoreManager.incrementScore();
             item.destroy();
-            this.incrementPlayerSpeed();
+            this.incrementPlayerSpeed(this.player);
             break;
         case 'flag':
             this.gameOverScreen();

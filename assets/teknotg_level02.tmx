@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="128" height="16" tilewidth="32" tileheight="32" nextobjectid="15">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="128" height="16" tilewidth="32" tileheight="32" nextobjectid="18">
  <tileset firstgid="1" name="simples_pimples_32px" tilewidth="32" tileheight="32">
   <image source="simples_pimples_32px.png" trans="5a5268" width="1600" height="2560"/>
  </tileset>
  <layer name="Ground" width="128" height="16">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3DAQ0AAAgDoFvI/vHeQ2EjAQAAAAAArtlRVb8tlT5nygAgAAA=
+   H4sIAAAAAAAAC+3YQQ0AIAwEQTCEJvyrwAENT3ozySq49NMxAOhozXv0tuc9erN/Nvtns382+2ezfzb7Z7N/tmr/6j+kv6v2l/Se21KHDnq6JYYAIAAA
   </data>
  </layer>
  <layer name="Blocks" width="128" height="16">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3UQQqAIBAFUO9/MzddqE20ExlRisLsPfg7cfNnJqV/2qoAa2vtvFsAa8hFgHXlIFAyH98S7fTVPT/f7VWYR9Rr3VcrrVno/cV7ejs82rUe5zNyo+/0q38AgGcccXKkeAAgAAA=
+   H4sIAAAAAAAAC+3WQQqAQAgF0Ln/zTpTm5ZFCzGkGus9cC9+EccAAIBvWoKiryjXY61B0VuUrYx7muVeZ+8L11Tu9d3zzvZx7sme7Cr5Zuc9a2+VPemg+m89Ncs3e/vzfgAA89oAlgYF7QAgAAA=
   </data>
  </layer>
  <objectgroup name="Items">
@@ -29,38 +29,53 @@
     <property name="sprite" value="diamond"/>
    </properties>
   </object>
-  <object id="5" type="diamond" gid="653" x="1285.67" y="252.333">
+  <object id="5" type="diamond" gid="653" x="1332.67" y="252.333">
    <properties>
     <property name="sprite" value="diamond"/>
    </properties>
   </object>
-  <object id="6" type="diamond" gid="653" x="1726" y="123">
+  <object id="6" type="diamond" gid="653" x="1808" y="347">
    <properties>
     <property name="sprite" value="diamond"/>
    </properties>
   </object>
-  <object id="7" type="diamond" gid="653" x="1626" y="378.333">
+  <object id="7" type="diamond" gid="653" x="1754" y="348.333">
    <properties>
     <property name="sprite" value="diamond"/>
    </properties>
   </object>
-  <object id="8" type="diamond" gid="653" x="2034.67" y="-29.3333">
+  <object id="8" type="diamond" gid="653" x="1594.67" y="187.667">
    <properties>
     <property name="destroyOnOverlap" value="false"/>
     <property name="sprite" value="diamond"/>
    </properties>
   </object>
-  <object id="10" type="flag" gid="854" x="2402.67" y="368">
+  <object id="10" type="flag" gid="854" x="3802.67" y="379">
    <properties>
     <property name="sprite" value="flag"/>
    </properties>
   </object>
-  <object id="13" type="kill" gid="1101" x="1630" y="190">
+  <object id="13" type="kill" gid="1101" x="1853" y="190">
    <properties>
     <property name="sprite" value="stop"/>
    </properties>
   </object>
-  <object id="14" type="kill" gid="1101" x="1780" y="381">
+  <object id="14" type="kill" gid="1101" x="2301" y="286">
+   <properties>
+    <property name="sprite" value="stop"/>
+   </properties>
+  </object>
+  <object id="15" type="diamond" gid="653" x="2483" y="199">
+   <properties>
+    <property name="sprite" value="diamond"/>
+   </properties>
+  </object>
+  <object id="16" type="diamond" gid="653" x="3037" y="248">
+   <properties>
+    <property name="sprite" value="diamond"/>
+   </properties>
+  </object>
+  <object id="17" type="kill" gid="1101" x="3521" y="380">
    <properties>
     <property name="sprite" value="stop"/>
    </properties>
