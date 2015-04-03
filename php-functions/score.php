@@ -10,7 +10,7 @@ if (isset($_POST['action']) && !empty($_POST['action'])) {
 
 } else {
 
-    db_action('show');
+    db_action('show', null, null, null);
 
 }
 
