@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     game.state.add("StartMenu", StartMenu);
     game.state.add("Level01", Level01);
     game.state.add("Level02", Level02);
+    game.state.add("Level03", Level03);
     game.state.add("GameOver", GameOver);
     game.state.start("Boot");
 
