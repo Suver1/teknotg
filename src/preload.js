@@ -10,6 +10,7 @@ Preload.prototype = {
         // load assets
         this.game.load.tilemap('level01', 'assets/teknotg_level01.json?_=' + (Math.random().toString().substr(0, 5)), null, Phaser.Tilemap.TILED_JSON);
         this.game.load.tilemap('level02', 'assets/teknotg_level02.json?_=' + (Math.random().toString().substr(0, 5)), null, Phaser.Tilemap.TILED_JSON);
+        this.game.load.tilemap('level03', 'assets/teknotg_level03.json?_=' + (Math.random().toString().substr(0, 5)), null, Phaser.Tilemap.TILED_JSON);
         //this.game.load.image('simples_pimples_32px', 'assets/simples_pimples_32px.png');
         this.game.load.image('iTideSprites', 'assets/iTideSprites.png');
         this.game.load.image("star", "assets/star.png");

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="128" height="16" tilewidth="32" tileheight="32" nextobjectid="31">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="128" height="16" tilewidth="32" tileheight="32" nextobjectid="34">
  <tileset firstgid="1" name="iTideSprites" tilewidth="32" tileheight="32">
   <image source="iTideSprites.png" width="192" height="192"/>
  </tileset>
  <layer name="Ground" width="128" height="16">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3XwQ5AMAwG4B5wcMLBybz/Y5qDcFm7jKbT/V/Sk0ia/jUQAQCAR12sninwbbRuAEwh/1vqLBwsm1LWQv5rrJ3499wgXPeqhfxPU6yZqcWuNVN/zr+W81r6hq75HVJz/tJct8R9gfTn/ewt1cdTIHlHLPbEMv/SfHO83QHN3jjSnny9H1r555yJWjO85D5zFr2V+no/pPy9zc+7Nzvf0n8PAADwDgQ4hSEAIAAA
+   H4sIAAAAAAAAC+2YwQrDIAyGPWw9yA5j5/X9X3MVNhpCq0aTmdR8EGih1Oj/p9GG4DhzcNtiGZ2Ew0bS8/6NGl2fW7xEM9IHXKOjsEqa1xvcr4HmhVmIoxMQAGuPcS/sXE3/kvaY2b1gUf9cz6Joj4FesNz7KFjU32LOWtG+lhw1Xtrj1kRLbzgal/oe6TOpdv054Jjjg2nc1GMoekqfSTXpD+sE1k4px1J99+wJfuC9QU2cjUv1gCSa9IfEk2sMdb+vBS0eKOkv2Stz/5pi5jnu2h5Fyzfl39E6r15va/0uOXX0ettyXTvOVfgA3kM32wAgAAA=
   </data>
  </layer>
  <layer name="Blocks" width="128" height="16">
@@ -19,42 +19,42 @@
     <property name="sprite" value="flag"/>
    </properties>
   </object>
-  <object id="20" type="speed" gid="20" x="661" y="346">
+  <object id="20" type="speed" gid="20" x="434.333" y="331.333">
    <properties>
     <property name="sprite" value="clock"/>
    </properties>
   </object>
-  <object id="21" type="kill" gid="21" x="1156" y="280">
+  <object id="21" type="kill" gid="21" x="925.333" y="445.333">
    <properties>
     <property name="sprite" value="arrowBack"/>
    </properties>
   </object>
-  <object id="22" type="speed" gid="20" x="1342" y="252">
+  <object id="22" type="speed" gid="20" x="1111.33" y="221.333">
    <properties>
     <property name="sprite" value="clock"/>
    </properties>
   </object>
-  <object id="23" type="speed" gid="20" x="1737" y="189">
+  <object id="23" type="speed" gid="20" x="1622.33" y="202.333">
    <properties>
     <property name="sprite" value="clock"/>
    </properties>
   </object>
-  <object id="24" type="kill" gid="21" x="2207" y="144">
+  <object id="24" type="kill" gid="21" x="2489.67" y="314.667">
    <properties>
     <property name="sprite" value="arrowBack"/>
    </properties>
   </object>
-  <object id="25" type="speed" gid="20" x="2480" y="193">
+  <object id="25" type="speed" gid="20" x="2177.33" y="315.667">
    <properties>
     <property name="sprite" value="clock"/>
    </properties>
   </object>
-  <object id="26" type="speed" gid="20" x="3026" y="225">
+  <object id="26" type="speed" gid="20" x="2792.67" y="214.333">
    <properties>
     <property name="sprite" value="clock"/>
    </properties>
   </object>
-  <object id="27" type="speed" gid="20" x="3248" y="348">
+  <object id="27" type="speed" gid="20" x="3036" y="310.667">
    <properties>
     <property name="sprite" value="clock"/>
    </properties>
@@ -62,6 +62,21 @@
   <object id="28" type="kill" gid="21" x="3501" y="380">
    <properties>
     <property name="sprite" value="arrowBack"/>
+   </properties>
+  </object>
+  <object id="31" type="speed" gid="20" x="1851.67" y="85">
+   <properties>
+    <property name="sprite" value="clock"/>
+   </properties>
+  </object>
+  <object id="32" type="speed" gid="20" x="1266.67" y="333">
+   <properties>
+    <property name="sprite" value="clock"/>
+   </properties>
+  </object>
+  <object id="33" type="speed" gid="20" x="1909.33" y="251.667">
+   <properties>
+    <property name="sprite" value="clock"/>
    </properties>
   </object>
  </objectgroup>
