@@ -2,10 +2,9 @@ var Level01 = function(game) { };
 
 Level01.prototype = {
     create: function(game) {
-        //this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+        console.log("Level 01");
 
         var jump = false;
-        console.log("Level 01");
         var gameOver = this.game.add.button(this.game.width / 2, this.game.height / 2, "star", this.gameOverScreen, this);
         // Set world dimensions
         // TODO replace last two parameters with the maps width.
@@ -22,17 +21,12 @@ Level01.prototype = {
         //this.blockLayer.scale = {x: 2, y: 2};
         this.map.setCollisionBetween(1, 2000, true, this.blockLayer);
 
-        // Ground setup
-        platforms = game.add.group();
-        platforms.enableBody = true;
-        var ground = platforms.create(0, game.world.height - 64, "platform");
-        ground.body.immovable = true;
-
         // Player setup
         this.player = this.game.add.sprite(20, 300, "player1");
         this.game.physics.arcade.enable(this.player);
         this.player.body.gravity.y = 2500;
         this.player.isInAir = true; //Maybe remove if player starts on ground
+        this.player.runSpeed = 350;
 
         // Camera setup - Camera stops following player when it hits world bounds.
         this.game.camera.target = this.player;
@@ -53,8 +47,8 @@ Level01.prototype = {
     },
     update: function() {
         // runs every frame. insert game logic here.
-        this.player.body.velocity.x = 450;
-        this.game.physics.arcade.collide(this.player, platforms);
+        this.player.body.velocity.x = this.player.runSpeed;
+
         this.game.physics.arcade.collide(this.player, this.groundLayer, this.playerTouchGround, undefined, this);
         this.game.physics.arcade.collide(this.player, this.blockLayer, this.playerTouchGround, undefined, this);
         this.game.physics.arcade.overlap(this.player, this.items, this.playerOverlapItem, undefined, this);
@@ -68,6 +62,7 @@ Level01.prototype = {
     render: function() {
         if (this.game.debugMode) {
             this.game.debug.text('fps: ' + this.game.time.fps, 0, 17, '#00FF00');
+            this.game.debug.text('speed: ' + this.player.body.velocity.x, 70, 17, '#00FF00');
 
             // Camera deadzone (context require Phaser.CANVAS)
             //var zone = this.game.camera.deadzone;
@@ -84,12 +79,10 @@ Level01.prototype = {
         this.game.state.start("GameOver", true, false, this.game.scoreManager.currentScore);
     },
     playerTouchGround: function(player, ground) {
-
         var deltaX = player.position.x - ground.worldX,
             deltaY = player.position.y - ground.worldY;
 
         var radians = Math.atan2(deltaY, deltaX);
-        // Deactivate killing because too hard
         if ((radians > -(Math.PI*5/6) && radians < -(Math.PI/6))) {
             player.isInAir = false;
         }
@@ -128,6 +121,7 @@ Level01.prototype = {
         case 'diamond':
             this.game.scoreManager.incrementScore();
             item.destroy();
+            //this.incrementPlayerSpeed(this.player);
             break;
         case 'flag':
             this.gameOverScreen();
@@ -140,5 +134,8 @@ Level01.prototype = {
     restartLevel: function() {
         this.game.scoreManager.resetScore();
         this.game.state.restart(true, false);
+    },
+    incrementPlayerSpeed: function() {
+        this.player.runSpeed += 20;
     }
 };
