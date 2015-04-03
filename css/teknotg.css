@@ -32,8 +32,10 @@ body {
 }
 
 /* Phaser */
-.phaser-container {
-    box-shadow: 0 0 15px white;
+.phaser-container canvas {
+    max-height: 100vh;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 /* Start menu */
