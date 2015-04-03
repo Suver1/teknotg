@@ -145,7 +145,7 @@ Level.prototype.playerOverlapItem = function(player, item) {
 };
 Level.prototype.restartLevel = function() {
     this.game.scoreManager.resetScore();
-    this.game.state.restart(false, false);
+    this.game.state.restart(true, false);
 };
 Level.prototype.incrementPlayerSpeed = function() {
     this.player.runSpeed += this.player.incrementRunSpeed;
