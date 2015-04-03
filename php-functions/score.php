@@ -75,7 +75,7 @@ function db_quote($value) {
 
 function db_get_results() {
 
-        $result = db_query("SELECT * FROM game_scores ORDER BY score DESC");
+        $result = db_query("SELECT * FROM game_scores ORDER BY score DESC, entry_date ASC");
 
         //print results
         echo '<link rel="stylesheet" href="style.css">';
