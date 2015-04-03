@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="128" height="16" tilewidth="32" tileheight="32" nextobjectid="29">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="128" height="16" tilewidth="32" tileheight="32" nextobjectid="30">
  <tileset firstgid="1" name="iTideSprites" tilewidth="32" tileheight="32">
   <image source="iTideSprites.png" width="192" height="192"/>
   <tile id="18">
@@ -24,13 +24,13 @@
   </data>
  </layer>
  <objectgroup name="Items">
-  <object id="25" type="flag" gid="19" x="3132.67" y="359.667">
+  <object id="25" type="flag" gid="19" x="3134.67" y="383.667">
    <properties>
-    <property name="sprite" value="flag2"/>
+    <property name="sprite" value="flag"/>
    </properties>
   </object>
   <object id="26" gid="26" x="2516" y="264"/>
-  <object id="27" type="diamond" gid="20" x="1021" y="350.5">
+  <object id="27" type="speed" gid="20" x="1021" y="350.5">
    <properties>
     <property name="sprite" value="clock"/>
    </properties>

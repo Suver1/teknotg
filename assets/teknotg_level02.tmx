@@ -14,12 +14,12 @@
   </data>
  </layer>
  <objectgroup name="Items">
-  <object id="19" type="flag" gid="19" x="1352" y="249">
+  <object id="19" type="flag" gid="19" x="1354" y="257">
    <properties>
-    <property name="sprite" value="flag2"/>
+    <property name="sprite" value="flag"/>
    </properties>
   </object>
-  <object id="20" type="diamond" gid="20" x="661" y="346">
+  <object id="20" type="speed" gid="20" x="661" y="346">
    <properties>
     <property name="sprite" value="clock"/>
    </properties>

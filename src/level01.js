@@ -123,7 +123,7 @@ Level01.prototype = {
             return item.onOverlap.call(this, player, item);
 
         switch(item.itemType) {
-        case 'diamond':
+        case 'speed':
             this.game.scoreManager.incrementScore();
             item.destroy();
             this.incrementPlayerSpeed();

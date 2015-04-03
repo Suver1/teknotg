@@ -34,14 +34,14 @@
                  "name":"",
                  "properties":
                     {
-                     "sprite":"flag2"
+                     "sprite":"flag"
                     },
                  "rotation":0,
                  "type":"flag",
                  "visible":true,
                  "width":0,
-                 "x":3132.66666666667,
-                 "y":359.666666666667
+                 "x":3134.66666666667,
+                 "y":383.666666666667
                 }, 
                 {
                  "gid":26,
@@ -69,7 +69,7 @@
                      "sprite":"clock"
                     },
                  "rotation":0,
-                 "type":"diamond",
+                 "type":"speed",
                  "visible":true,
                  "width":0,
                  "x":1021,
@@ -98,7 +98,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":29,
+ "nextobjectid":30,
  "orientation":"orthogonal",
  "properties":
     {
