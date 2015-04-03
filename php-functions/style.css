@@ -1,8 +1,13 @@
+body {
+    margin: 0;
+}
+
 table {
     background: white;
     margin-bottom: 1.25rem;
     border: solid 1px #dddddd;
     table-layout: auto;
+    margin: 10rem auto 0;
 }
 
 table caption {

@@ -1,48 +1,101 @@
 <?php
-$username = "bit";
-$password = "yP76sxmD5ZAFjzhf";
-$hostname = "bit.dance";
-$dbname = "bit";
-$tablename = "game_scores";
 
+if (isset($_POST['action']) && !empty($_POST['action'])) {
 
-//connection to the database
-$dbhandle = mysql_connect($hostname, $username, $password)
-    or die("Unable to connect to MySQL");
+    error_log($_POST['score'] . '\n', 3, 'error.log');
 
+    $name = db_quote($_POST['name']);
+    $score = db_quote($_POST['score']);
+    $time_used = db_quote($_POST['time_used']);
 
-//select a database to work with
-$selected = mysql_select_db($dbname, $dbhandle)
-    or die("Could not select database");
+    db_action('save', $name, $score, $time_used);
 
+} else {
 
-//execute the SQL query and return records
-$result = mysql_query("SELECT * FROM {$tablename}");
+    db_action('show');
 
-
-
-
-
-
-//print results
-echo '<link rel="stylesheet" href="style.css">';
-echo '<table>';
-echo '<thead>';
-echo '<th>ID</th> <th>Name</th> <th>Score</th> <th>Time used</th> <th>Entry date</th>';
-echo '</thead>';
-
-while ($entry = mysql_fetch_array($result)) {
-    echo '<tr>';
-    echo '<td>' . $entry{'id'} . '</td>';
-    echo '<td>' . $entry{'name'} . '</td>';
-    echo '<td>' . $entry{'score'} . '</td>';
-    echo '<td>' . $entry{'time_used'} . '</td>';
-    echo '<td>' . $entry{'entry_date'} . '</td>';
-    echo '</tr>';
 }
 
-echo '</table>';
+
+function db_action($action, $name, $score, $time_used) {
+
+    if ($action == 'save') {
+
+        db_query("INSERT INTO game_scores (
+                      name,
+                      score,
+                      time_used
+                  ) VALUES (
+                      {$name},
+                      {$score},
+                      {$time_used}
+                  )
+                      ");
+
+    }
+
+    if ($action == 'show') {
+
+        db_get_results();
+
+    }
+
+}
 
 
-//close the connection
-mysql_close($dbhandle);
+function db_connect() {
+    static $connection;
+
+    if (!isset($connection)) {
+        require_once('../configuration.php');
+        $connection = mysqli_connect($hostname, $username, $password, $dbname);
+    }
+
+    if ($connection === false) {
+        return mysqli_connect_error();
+    }
+
+    return $connection;
+}
+
+
+function db_query($query) {
+    $connection = db_connect();
+
+    $result = mysqli_query($connection, $query);
+
+    return $result;
+}
+
+
+function db_quote($value) {
+    $connection = db_connect();
+
+    return "'" . mysqli_real_escape_string($connection, $value) . "'";
+}
+
+
+function db_get_results() {
+
+        $result = db_query("SELECT * FROM game_scores ORDER BY score DESC");
+
+        //print results
+        echo '<link rel="stylesheet" href="style.css">';
+        echo '<table>';
+        echo '<thead>';
+        echo '<th>ID</th> <th>Name</th> <th>Score</th> <th>Time used</th> <th>Entry date</th>';
+        echo '</thead>';
+
+        while ($entry = mysqli_fetch_assoc($result)) {
+            echo '<tr>';
+            echo '<td>' . $entry{'id'} . '</td>';
+            echo '<td>' . $entry{'name'} . '</td>';
+            echo '<td>' . $entry{'score'} . '</td>';
+            echo '<td>' . $entry{'time_used'} . '</td>';
+            echo '<td>' . $entry{'entry_date'} . '</td>';
+            echo '</tr>';
+        }
+
+        echo '</table>';
+
+}
