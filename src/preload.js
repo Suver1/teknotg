@@ -24,6 +24,8 @@ Preload.prototype = {
         this.game.load.image("logo", "assets/iTideLogo.png");
         this.game.load.image("background", "assets/iTideBG.png");
 
+        this.game.load.audio("coin", "assets/sounds/smb_coin.wav");
+
     },
     create: function() {
         console.log("preload");
