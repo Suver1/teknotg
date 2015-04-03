@@ -10,13 +10,19 @@ Preload.prototype = {
         // load assets
         this.game.load.tilemap('level01', 'assets/teknotg_level01.json?_=' + (Math.random().toString().substr(0, 5)), null, Phaser.Tilemap.TILED_JSON);
         this.game.load.tilemap('level02', 'assets/teknotg_level02.json?_=' + (Math.random().toString().substr(0, 5)), null, Phaser.Tilemap.TILED_JSON);
-        this.game.load.image('simples_pimples_32px', 'assets/simples_pimples_32px.png');
+        //this.game.load.image('simples_pimples_32px', 'assets/simples_pimples_32px.png');
+        this.game.load.image('iTideSprites', 'assets/iTideSprites.png');
         this.game.load.image("star", "assets/star.png");
         this.game.load.image("platform", "assets/platform.png");
         this.game.load.atlasJSONHash("player1", "assets/pgmanSprite.png", "assets/pgman.json");
         this.game.load.image("diamond", "assets/diamond.png");
         this.game.load.image("flag", "assets/flag.png");
+        this.game.load.image("flag2", "assets/flag2.png");
+        this.game.load.image("clock", "assets/clock.png");
+        this.game.load.image("arrowBack", "assets/arrowBack.png");
         this.game.load.image("stop", "assets/stop.png");
+        this.game.load.image("logo", "assets/iTideLogo.png");
+        this.game.load.image("background", "assets/iTideBG.png");
 
     },
     create: function() {

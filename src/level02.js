@@ -10,8 +10,11 @@ Level02.prototype = {
         this.game.world.setBounds(-300, -300, 20000, 2000);
 
         this.map = this.game.add.tilemap('level02');
-        this.map.addTilesetImage('simples_pimples_32px', 'simples_pimples_32px');
+        this.map.addTilesetImage('iTideSprites', 'iTideSprites');
         //this.map.scale = {x: 2, y: 2};
+
+        var bg = this.game.add.sprite(0, 0, 'background');
+        bg.fixedToCamera = true;
 
         this.groundLayer = this.map.createLayer('Ground');
         //this.groundLayer.scale = {x: 2, y: 2};

@@ -1,42 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="128" height="16" tilewidth="32" tileheight="32" nextobjectid="15">
- <tileset firstgid="1" name="simples_pimples_32px" tilewidth="32" tileheight="32">
-  <image source="simples_pimples_32px.png" trans="5a5268" width="1600" height="2560"/>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="128" height="16" tilewidth="32" tileheight="32" nextobjectid="29">
+ <tileset firstgid="1" name="iTideSprites" tilewidth="32" tileheight="32">
+  <image source="iTideSprites.png" width="192" height="192"/>
+  <tile id="18">
+   <properties>
+    <property name="sprite" value="flag2"/>
+   </properties>
+  </tile>
+  <tile id="24">
+   <properties>
+    <property name="sprite" value="flag2"/>
+   </properties>
+  </tile>
  </tileset>
  <layer name="Ground" width="128" height="16">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3XsQkAIRREQW3Imuy/CvMD0UQP3Bl4ickPNrIUAADgL62u4129ruNd9s9m/2z2z2b/bLf33/lv6F7frWdvp+5JkjIasWeM3wAgAAA=
+   H4sIAAAAAAAAC+3WsQ2AMAwEwBRAgdh/XjIBkcCygdxJX6WwlW/cGgAAUGXpWS+y1a1Ggn3wfqRsQRX9z03/c9N/nNEt9cb76m/93+ngSS/Z86Jl9x/xV/LdADCnE9+k/XMAIAAA
   </data>
  </layer>
  <layer name="Blocks" width="128" height="16">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3DQQkAAAgEsOvfzFaWuIfIBksAAAAAAOC+KQYA+GgBC24O+gAgAAA=
+   H4sIAAAAAAAAC+3BAQ0AAADCoPdPbQ43oAAAAAAAAACAdwOUmfTYACAAAA==
   </data>
  </layer>
  <objectgroup name="Items">
-  <object id="1" type="diamond" gid="653" x="773.667" y="381.333">
+  <object id="25" type="flag" gid="19" x="3132.67" y="359.667">
    <properties>
-    <property name="sprite" value="diamond"/>
+    <property name="sprite" value="flag2"/>
    </properties>
   </object>
-  <object id="7" type="diamond" gid="653" x="1746" y="349.333">
+  <object id="26" gid="26" x="2516" y="264"/>
+  <object id="27" type="diamond" gid="20" x="1021" y="350.5">
    <properties>
-    <property name="sprite" value="diamond"/>
+    <property name="sprite" value="clock"/>
    </properties>
   </object>
-  <object id="10" type="flag" gid="854" x="3158.67" y="379">
+  <object id="28" type="kill" gid="21" x="1506.5" y="382.5">
    <properties>
-    <property name="sprite" value="flag"/>
-   </properties>
-  </object>
-  <object id="13" type="kill" gid="1101" x="1342" y="381">
-   <properties>
-    <property name="sprite" value="stop"/>
-   </properties>
-  </object>
-  <object id="14" type="kill" gid="1101" x="2168" y="350">
-   <properties>
-    <property name="sprite" value="stop"/>
+    <property name="sprite" value="arrowBack"/>
    </properties>
   </object>
  </objectgroup>

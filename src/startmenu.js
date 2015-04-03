@@ -10,6 +10,7 @@ StartMenu.prototype = {
         var playButton = this.game.add.button(100, 100, "star", this.playTheGame, this);
         */
         // Input setup
+        var bg = this.game.add.sprite(0, 0, 'logo');
         var startMenuElm = document.getElementById('start-menu'),
             btnPlay = document.getElementById('button-play'),
             btnMute = document.getElementById('button-mute'),
