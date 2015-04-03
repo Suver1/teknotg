@@ -54,7 +54,7 @@ Level01.prototype = {
         this.game.physics.arcade.overlap(this.player, this.items, this.playerOverlapItem, undefined, this);
 
         if (this.game.input.keyboard.isDown(Phaser.Keyboard.ESC)) {
-            this.game.state.restart(true, false, this.scoreManager.getScore());
+            this.restartLevel();
             // Untill gameover works
             this.game.scoreManager.sendScore();
         }
