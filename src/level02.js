@@ -3,6 +3,8 @@ var Level02 = function() {};
 Level02.prototype = Object.create(Level.prototype);
 Level02.prototype.levelName = 'Level 02';
 Level02.prototype.levelTilemap = 'level02';
+Level02.prototype.initialRunSpeed = 350;
+Level02.prototype.runSpeedIncrement = 40;
 
 Level02.prototype.onFinish = function() {
     // this.game.state.start parameters:

@@ -25,8 +25,8 @@ Level.prototype.create = function(game) {
     this.game.physics.arcade.enable(this.player);
     this.player.body.gravity.y = 2500;
     this.player.isInAir = true; //Maybe remove if player starts on ground
-    this.player.runSpeed = 350;
-    this.player.incrementRunSpeed = 100;
+    this.player.runSpeed = this.initialRunSpeed;
+    this.player.incrementRunSpeed = this.runSpeedIncrement;
 
     // Camera setup - Camera stops following player when it hits world bounds.
     this.game.camera.target = this.player;
