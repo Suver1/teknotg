@@ -55,6 +55,7 @@ Level01.prototype = {
         this.game.physics.arcade.overlap(this.player, this.items, this.playerOverlapItem, undefined, this);
 
         if (this.game.input.keyboard.isDown(Phaser.Keyboard.ESC)) {
+            this.game.scoreManager.sendScore();
             this.restartLevel();
         }
     },
@@ -75,8 +76,6 @@ Level01.prototype = {
         // 2. clearWorld (default true) clears the World display list fully (but not the Stage, so if you have added your own objects to the Stage they will need managing directly).
         // 3. clearCache (default false) clears all loaded assets.
         // 4. All other parameters from the fourth are variables that will be passed to the init function (if it has one). We pass the score to the GameOver state.
-        this.game.scoreManager.sendScore();
-        this.game.scoreManager.resetScore();
         this.game.state.start("Level02", true, false);
     },
     playerTouchGround: function(player, ground) {
