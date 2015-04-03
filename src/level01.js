@@ -7,8 +7,6 @@ Level01.prototype.initialRunSpeed = 350;
 Level01.prototype.runSpeedIncrement = 100;
 
 Level01.prototype.onFinish = function() {
-    this.game.scoreManager.sendScore();
-    this.game.scoreManager.resetScore();
     this.game.state.start("Level02", true, false);
 };
 

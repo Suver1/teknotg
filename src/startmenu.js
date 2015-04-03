@@ -19,6 +19,7 @@ StartMenu.prototype = {
         btnPlay.addEventListener('click', this.playTheGame.bind(this));
         btnMute.addEventListener('click', this.muteSound.bind(this));
         btnDerp.addEventListener('click', function(e) { console.log('Derp'); });
+        window.addEventListener('keydown', this.onKeydown);
     },
     render: function() {
         if (this.game.debugMode) {
@@ -26,6 +27,7 @@ StartMenu.prototype = {
         }
     },
     playTheGame: function() {
+        window.removeEventListener('keydown', this.onKeydown);
         var startMenuElm = document.getElementById('start-menu');
         startMenuElm.classList.add('hidden');
 
@@ -33,5 +35,9 @@ StartMenu.prototype = {
     },
     muteSound: function() {
         // mute all sound
+    },
+    onKeydown: function(e) {
+        if (e.keyCode == 13)
+            this.playTheGame();
     }
 };

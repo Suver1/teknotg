@@ -18,6 +18,8 @@ Preload.prototype = {
         this.game.load.image("flag", "assets/flag.png");
         this.game.load.image("stop", "assets/stop.png");
 
+        this.game.load.audio("coin", "assets/sounds/smb_coin.wav");
+
     },
     create: function() {
         console.log("preload");

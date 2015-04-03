@@ -44,6 +44,8 @@ Level.prototype.create = function(game) {
 
     this.createItems();
 
+    this.coinSound = this.game.add.audio('coin');
+    this.timeStarted = Date.now();
 };
 
 Level.prototype.update = function() {
@@ -120,11 +122,14 @@ Level.prototype.playerOverlapItem = function(player, item) {
 
     switch(item.itemType) {
     case 'diamond':
+        this.coinSound.play();
         this.game.scoreManager.incrementScore();
         item.destroy();
         this.incrementPlayerSpeed();
         break;
     case 'flag':
+        this.game.scoreManager.sendScore(Date.now() - this.timeStarted);
+        this.game.scoreManager.resetScore();
         if (this.onFinish)
             this.onFinish();
         else
@@ -137,7 +142,7 @@ Level.prototype.playerOverlapItem = function(player, item) {
 };
 Level.prototype.restartLevel = function() {
     this.game.scoreManager.resetScore();
-    this.game.state.restart(true, false);
+    this.game.state.restart(false, false);
 };
 Level.prototype.incrementPlayerSpeed = function() {
     this.player.runSpeed += this.player.incrementRunSpeed;
