@@ -31,7 +31,7 @@ StartMenu.prototype = {
         }
     },
     playTheGame: function() {
-        window.removeEventListener('keydown', this.onKeydown);
+        //window.removeEventListener('keydown', this.onKeydown);
         var startMenuElm = document.getElementById('start-menu');
         startMenuElm.classList.add('hidden');
 
