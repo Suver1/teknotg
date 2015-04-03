@@ -15,7 +15,7 @@
  </tileset>
  <layer name="Ground" width="128" height="16">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3WsQ2AMAwEwBRAgdh/XjIBkcCygdxJX6WwlW/cGgAAUGXpWS+y1a1Ggn3wfqRsQRX9z03/c9N/nNEt9cb76m/93+ngSS/Z86Jl9x/xV/LdADCnE9+k/XMAIAAA
+   H4sIAAAAAAAAC+3WMQqAMAxA0Q7VoXgEvf81dRE6SEtjSErzH2RySPAvTQkAAACAl/zM1pjd7zQYKJ3vh8kV8EL/2OgfG/319N5SM76vVusvafCnS73vFNx7De7TZt1fo01rJA2+vF1m22f9v7TvAgDEdANlTj3eACAAAA==
   </data>
  </layer>
  <layer name="Blocks" width="128" height="16">
