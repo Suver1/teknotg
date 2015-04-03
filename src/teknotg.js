@@ -16,12 +16,4 @@ document.addEventListener('DOMContentLoaded', function() {
     game.state.start("Boot");
 
     game.scoreManager = new ScoreManager();
-
-    setTimeout(function() {
-        document.getElementById("button-play").focus();
-    }, 500);
-    setTimeout(function() {
-        document.getElementById("button-play").focus();
-    }, 1000);
-
 });
