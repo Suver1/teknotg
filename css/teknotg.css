@@ -16,48 +16,9 @@ body {
     vertical-align: middle;
 }
 
-/* Helpers */
-.hidden {
-    display: none !important;
-}
-
-.button {
-    height: 52px;
-    width: 100%;
-    display: block;
-    border: none;
-    background: #111111;
-    font-size: 14px;
-    margin-bottom: 14px;
-}
-
 /* Phaser */
 .phaser-container canvas {
     max-height: 100vh;
     max-width: 100%;
     margin: 0 auto;
-}
-
-/* Start menu */
-.start-menu {
-    position: absolute;
-    right: 0; left: 0;
-    top: 25%;
-    max-width: 480px;
-    width: 100%;
-    margin: 0 auto;
-}
-
-/* Color schema */
-.red {
-    color: #800600;
-    background-color: #FF4136;
-}
-.green {
-    color: #0E3E14;
-    background-color: #2ECC40;
-}
-.blue {
-    color: #B3DBFF;
-    background-color: #0074D9;
 }
