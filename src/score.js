@@ -44,20 +44,22 @@ ScoreManager.prototype.sendScore = function() {
 
 // Fetches the scores to be displayed in scoreboard
 ScoreManager.prototype.getScore = function() {
+    var scores;
 
-    /*
     reqwest({
         url: 'php-functions/score.php',
         method: 'GET',
-        type: 'JSON',
+        //type: 'JSON',
         data: {
-            action: 'sendScore',
-            score: this.currentScore
+            action: 'getScore'
         },
-        success: function(output) {
-            console.log(output);
+        success: function(response) {
+            scores = response;
+            console.log(response);
         }
     });
-     */
+
+
+    return scores;
 
 };
