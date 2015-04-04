@@ -36,7 +36,7 @@ Highscores.prototype = {
             var position = 25;
 
             highscores.forEach(function(entry) {
-                var text = entry.entry_date + ' - - ' + entry.score + ' - - ' + entry.name;
+                var text = entry.entry_date + ' - - ' + entry.score + ' - - ' + entry.name + ' - - ' + entry.time_used;
 
                 position = position + 30;
 
