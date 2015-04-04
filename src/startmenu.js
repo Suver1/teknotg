@@ -9,9 +9,10 @@ StartMenu.prototype = {
         var bg = this.game.add.sprite(0, 0, 'logo');
 
         // Menu buttons
-        var startBtn = game.add.button(90, 200, 'buttonsSprite', this.playTheGame, this, 'StartBtnHighlight.png', 'StartBtn.png', 'StartBtn.png');
-        var highScoresBtn = game.add.button(90, 230, 'buttonsSprite', this.showHighScores, this, 'HightscoresBtnHightlight.png', 'HightscoresBtn.png', 'HightscoresBtn.png');
-        var muteSoundBtn = game.add.button(90, 265, 'buttonsSprite', this.muteSound, this, 'muteBtnHighlight.png', 'muteBtn.png', 'muteBtn.png');
+        var startBtn = this.game.add.button(90, 200, 'buttonsSprite', this.playTheGame, this, 'StartBtnHighlight.png', 'StartBtn.png', 'StartBtn.png');
+        var highScoresBtn = this.game.add.button(90, 230, 'buttonsSprite', this.showHighScores, this, 'HightscoresBtnHightlight.png', 'HightscoresBtn.png', 'HightscoresBtn.png');
+        var muteSoundBtn = this.game.add.button(90, 265, 'buttonsSprite', this.muteSound, this, 'muteBtnHighlight.png', 'muteBtn.png', 'muteBtn.png');
+
         if (window.innerWidth < 600) {
             var scale = 1.5;
             startBtn.scale.setTo(scale, scale);
@@ -24,6 +25,9 @@ StartMenu.prototype = {
             muteSoundBtn.position.x = 70;
             muteSoundBtn.position.y = 280;
         }
+
+        this.backgroundMusic = this.game.add.audio('menu');
+        this.backgroundMusic.play();
     },
     render: function() {
         if (this.game.debugMode) {
@@ -32,12 +36,18 @@ StartMenu.prototype = {
     },
     playTheGame: function() {
         //window.removeEventListener('keydown', this.onKeydown);
+        /*
         var startMenuElm = document.getElementById('start-menu');
+        startMenuElm.classList.add('hidden');
+        */
 
+        this.backgroundMusic.stop();
         this.game.state.start("Level01");
     },
     muteSound: function() {
         // mute all sound
+        this.backgroundMusic.stop();
+        this.game.muteAllSounds = true;
     },
     showHighScores: function() {
         // Display high scores

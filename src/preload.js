@@ -8,9 +8,9 @@ Preload.prototype = {
         // load loading bar - onFileComplete
         this.game.time.advancedTiming = true;
         // load assets
-        this.game.load.tilemap('level01', 'assets/teknotg_level01.json?_=' + (Math.random().toString().substr(0, 5)), null, Phaser.Tilemap.TILED_JSON);
-        this.game.load.tilemap('level02', 'assets/teknotg_level02.json?_=' + (Math.random().toString().substr(0, 5)), null, Phaser.Tilemap.TILED_JSON);
-        this.game.load.tilemap('level03', 'assets/teknotg_level03.json?_=' + (Math.random().toString().substr(0, 5)), null, Phaser.Tilemap.TILED_JSON);
+        this.game.load.tilemap('level01', this.cachebust('assets/teknotg_level01.json'), null, Phaser.Tilemap.TILED_JSON);
+        this.game.load.tilemap('level02', this.cachebust('assets/teknotg_level02.json'), null, Phaser.Tilemap.TILED_JSON);
+        this.game.load.tilemap('level03', this.cachebust('assets/teknotg_level03.json'), null, Phaser.Tilemap.TILED_JSON);
         //this.game.load.image('simples_pimples_32px', 'assets/simples_pimples_32px.png');
         this.game.load.image('iTideSprites', 'assets/iTideSprites.png');
         this.game.load.image("star", "assets/star.png");
@@ -26,7 +26,8 @@ Preload.prototype = {
         this.game.load.image("background", "assets/iTideBG.png");
 
         this.game.load.audio("coin", "assets/sounds/smb_coin.wav");
-
+        this.game.load.audio("menu", "assets/menu.mp3");
+        this.game.load.audio("game", "assets/game.mp3");
     },
     create: function() {
 
@@ -36,5 +37,8 @@ Preload.prototype = {
         if (this.game.debugMode) {
             this.game.debug.text('fps: ' + this.game.time.fps, 0, 17, '#00FF00');
         }
+    },
+    cachebust: function(url) {
+        return url + ( this.game.debugMode ? '?_=' + (Math.random().toString().substr(0, 5)) : '' );
     }
 };
