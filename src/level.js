@@ -63,7 +63,11 @@ Level.prototype.create = function(game) {
         this.game.backgroundMusic.play();
     }
 
-    this.timeStarted = Date.now();
+    
+    if (typeof this.timeStarted == 'undefined') {
+        this.timeStarted = Date.now();
+        this.game.scoreManager.setTimeStarted();
+    }
     this.timeElapsedText = this.game.add.text(700, 20, (Date.now() - this.timeStarted)/1000, {fill: '#ffffff'});
     this.timeElapsedText.fixedToCamera = true;
 };
@@ -157,7 +161,7 @@ Level.prototype.playerOverlapItem = function(player, item) {
         this.player.animations.frameRate = this.player.animations.frameRateStart + this.game.scoreManager.getCurrentScore() + this.player.animations.frameRateIncrement;
         break;
     case 'flag':
-        this.game.scoreManager.sendScore(Date.now() - this.timeStarted);
+        this.game.scoreManager.sendScore(this.game.scoreManager.getTimeElapsed());
         this.game.scoreManager.resetScore();
         if (this.onFinish)
             this.onFinish();
