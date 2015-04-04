@@ -12,6 +12,7 @@ StartMenu.prototype = {
         var startBtn = game.add.button(90, 200, 'buttonsSprite', this.playTheGame, this, 'StartBtnHighlight.png', 'StartBtn.png', 'StartBtn.png');
         var highScoresBtn = game.add.button(90, 230, 'buttonsSprite', this.showHighScores, this, 'HightscoresBtnHightlight.png', 'HightscoresBtn.png', 'HightscoresBtn.png');
         var muteSoundBtn = game.add.button(90, 265, 'buttonsSprite', this.muteSound, this, 'muteBtnHighlight.png', 'muteBtn.png', 'muteBtn.png');
+
         if (window.innerWidth < 600) {
             var scale = 1.5;
             startBtn.scale.setTo(scale, scale);
@@ -31,9 +32,6 @@ StartMenu.prototype = {
         }
     },
     playTheGame: function() {
-        //window.removeEventListener('keydown', this.onKeydown);
-        var startMenuElm = document.getElementById('start-menu');
-
         this.game.state.start("Level01");
     },
     muteSound: function() {
