@@ -8,6 +8,10 @@ StartMenu.prototype = {
         // Input setup
         var bg = this.game.add.sprite(0, 0, 'logo');
 
+        this.backgroundMusic = this.game.add.audio('menu');
+        this.backgroundMusic.volume = this.muteAllSounds ? 0 : 0.6;
+        this.backgroundMusic.play();
+
         // Menu buttons
         var startBtn = this.game.add.button(90, 200, 'buttonsSprite', this.playTheGame, this, 'startBtnHighlight.png', 'startBtn.png', 'startBtn.png');
         var highScoresBtn = this.game.add.button(90, 230, 'buttonsSprite', this.showHighScores, this, 'highScoresBtnHighlight.png', 'highScoresBtn.png', 'highScoresBtn.png');
@@ -25,9 +29,6 @@ StartMenu.prototype = {
             muteSoundBtn.position.x = 70;
             muteSoundBtn.position.y = 280;
         }
-
-        this.backgroundMusic = this.game.add.audio('menu');
-        this.backgroundMusic.play();
     },
     render: function() {
         if (this.game.debugMode) {

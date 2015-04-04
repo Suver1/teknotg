@@ -4,10 +4,11 @@ var GameOver = function(game) {
 
 GameOver.prototype = {
     create: function(game, currentScore) {
+
         var bg = this.game.add.sprite(0, 0, 'background');
             bg.fixedToCamera = true;
         style = {fontSize: '32px', fill: '#FFF'};
-        game.add.text(16, 16, 'Congratulations!\nYou made it in ' + this.game.scoreManager.currentTime / 1000 + ' seconds', style);
+        game.add.text(this.game.width / 4, 100, 'Congratulations!\nYou made it in ' + this.game.scoreManager.currentTime / 1000 + ' seconds', style);
         //game.add.text(16, 16, 'time: ' + this.game.scoreManager.currentTime / 1000 + ' sec ', style);
         console.log("gameOver");
         // place game over stuff here
@@ -20,6 +21,7 @@ GameOver.prototype = {
         this.submitButton = document.getElementById('submit-time');
         this.submitButton.addEventListener('click', this.onClick.bind(this));
     },
+
     render: function() {
         if (this.inputField.value.length >= 3) {
             // Activate send button
@@ -46,4 +48,5 @@ GameOver.prototype = {
             this.game.scoreManager.sendScore(this.inputField.value);
         }
     }
+
 };

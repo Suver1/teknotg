@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.appendChild(container);
 
     game = new Phaser.Game(800, 450, Phaser.AUTO, container);
-    game.debugMode = (location.host == 'bit.dance');
+    game.debugMode = (location.host != 'bit.dance');
 
     game.state.add("Boot", Boot);
     game.state.add("Preload", Preload);
