@@ -30,7 +30,6 @@ Preload.prototype = {
         this.game.load.audio("game", "assets/game.mp3");
     },
     create: function() {
-
         this.game.state.start("StartMenu");
     },
     render: function() {
