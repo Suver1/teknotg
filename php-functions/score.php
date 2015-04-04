@@ -1,10 +1,10 @@
 <?php
 
-if ($_GET['action'] == 'getScore') {
+if (isset($_GET['action']) && ($_GET['action'] == 'getScore')) {
 
     db_action('get', null, null, null);
 
-} else if ($_POST['action'] == 'sendScore') {
+} else if (isset($_POST['action']) && ($_POST['action'] == 'sendScore')) {
 
     $name = db_quote($_POST['name']);
     $score = db_quote($_POST['score']);
