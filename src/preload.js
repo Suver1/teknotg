@@ -29,7 +29,7 @@ Preload.prototype = {
 
     },
     create: function() {
-        console.log("preload");
+
         this.game.state.start("StartMenu");
     },
     render: function() {
