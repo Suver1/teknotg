@@ -13,8 +13,8 @@ StartMenu.prototype = {
         this.backgroundMusic.play();
 
         // Menu buttons
-        var startBtn = this.game.add.button(90, 200, 'buttonsSprite', this.playTheGame, this, 'StartBtnHighlight.png', 'StartBtn.png', 'StartBtn.png');
-        var highScoresBtn = this.game.add.button(90, 230, 'buttonsSprite', this.showHighScores, this, 'HightscoresBtnHightlight.png', 'HightscoresBtn.png', 'HightscoresBtn.png');
+        var startBtn = this.game.add.button(90, 200, 'buttonsSprite', this.playTheGame, this, 'startBtnHighlight.png', 'startBtn.png', 'startBtn.png');
+        var highScoresBtn = this.game.add.button(90, 230, 'buttonsSprite', this.showHighScores, this, 'highScoresBtnHighlight.png', 'highScoresBtn.png', 'highScoresBtn.png');
         var muteSoundBtn = this.game.add.button(90, 265, 'buttonsSprite', this.muteSound, this, 'muteBtnHighlight.png', 'muteBtn.png', 'muteBtn.png');
 
         if (window.innerWidth < 600) {
@@ -51,7 +51,7 @@ StartMenu.prototype = {
         this.game.muteAllSounds = true;
     },
     showHighScores: function() {
-        // Display high scores
+        this.game.state.start("Highscores");
     },
     onKeydown: function(e) {
         if (e.keyCode == 13)
