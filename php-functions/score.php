@@ -1,12 +1,18 @@
 <?php
 
-if (isset($_POST['action']) && !empty($_POST['action'])) {
+if ($_POST['action'] == 'sendScore') {
 
     $name = db_quote($_POST['name']);
     $score = db_quote($_POST['score']);
     $time_used = db_quote($_POST['time_used']);
 
     db_action('save', $name, $score, $time_used);
+
+}
+
+if ($_GET['action'] == 'getScore') {
+
+    db_action('get', null, null, null);
 
 } else {
 
@@ -29,6 +35,12 @@ function db_action($action, $name, $score, $time_used) {
                       {$time_used}
                   )
                       ");
+
+    }
+
+    if ($action == 'get') {
+
+        db_get_json_results();
 
     }
 
@@ -75,25 +87,34 @@ function db_quote($value) {
 
 function db_get_results() {
 
-        $result = db_query("SELECT * FROM game_scores ORDER BY score DESC, entry_date ASC");
+    $result = db_query("SELECT * FROM game_scores ORDER BY score DESC, entry_date ASC");
 
-        //print results
-        echo '<link rel="stylesheet" href="style.css">';
-        echo '<table>';
-        echo '<thead>';
-        echo '<th>ID</th> <th>Name</th> <th>Score</th> <th>Time used</th> <th>Entry date</th>';
-        echo '</thead>';
+    //print results
+    echo '<link rel="stylesheet" href="style.css">';
+    echo '<table>';
+    echo '<thead>';
+    echo '<th>ID</th> <th>Name</th> <th>Score</th> <th>Time used</th> <th>Entry date</th>';
+    echo '</thead>';
 
-        while ($entry = mysqli_fetch_assoc($result)) {
-            echo '<tr>';
-            echo '<td>' . $entry{'id'} . '</td>';
-            echo '<td>' . $entry{'name'} . '</td>';
-            echo '<td>' . $entry{'score'} . '</td>';
-            echo '<td>' . $entry{'time_used'} . '</td>';
-            echo '<td>' . $entry{'entry_date'} . '</td>';
-            echo '</tr>';
-        }
+    while ($entry = mysqli_fetch_assoc($result)) {
+        echo '<tr>';
+        echo '<td>' . $entry{'id'} . '</td>';
+        echo '<td>' . $entry{'name'} . '</td>';
+        echo '<td>' . $entry{'score'} . '</td>';
+        echo '<td>' . $entry{'time_used'} . '</td>';
+        echo '<td>' . $entry{'entry_date'} . '</td>';
+        echo '</tr>';
+    }
 
-        echo '</table>';
+    echo '</table>';
+
+}
+
+
+function db_get_json_results() {
+
+    $result = db_query("SELECT * FROM game_scores ORDER BY score DESC, entry_date ASC");
+
+    return $result;
 
 }

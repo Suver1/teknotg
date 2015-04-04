@@ -50,7 +50,7 @@ StartMenu.prototype = {
         this.game.muteAllSounds = true;
     },
     showHighScores: function() {
-        // Display high scores
+        this.game.state.start("Highscores");
     },
     onKeydown: function(e) {
         if (e.keyCode == 13)
