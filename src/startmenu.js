@@ -42,6 +42,7 @@ StartMenu.prototype = {
         */
 
         this.backgroundMusic.stop();
+        this.game.scoreManager.setTimeStarted();
         this.game.state.start("Level01");
     },
     muteSound: function() {

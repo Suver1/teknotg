@@ -62,11 +62,11 @@ Level.prototype.create = function(game) {
     }
 
 
-    if (typeof this.timeStarted == 'undefined') {
-        this.timeStarted = Date.now();
-        this.game.scoreManager.setTimeStarted();
-    }
-    this.timeElapsedText = this.game.add.text(700, 20, (Date.now() - this.timeStarted)/1000, {fill: '#ffffff'});
+    //if (typeof this.timeStarted == 'undefined') {
+    //    this.timeStarted = Date.now();
+    //    this.game.scoreManager.setTimeStarted();
+    //}
+    this.timeElapsedText = this.game.add.text(700, 20, (this.game.scoreManager.getTimeElapsed())/1000, {fill: '#ffffff'});
     this.timeElapsedText.fixedToCamera = true;
 };
 
@@ -90,7 +90,7 @@ Level.prototype.update = function() {
     this.player.lastFrameVelocity = this.player.body.velocity.x; // Needs to be after velocity check
 };
 Level.prototype.render = function() {
-    this.timeElapsedText.setText((Date.now() - this.timeStarted)/1000);
+    this.timeElapsedText.setText((this.game.scoreManager.getTimeElapsed())/1000);
     if (this.game.debugMode) {
         this.game.debug.text('fps: ' + this.game.time.fps, 0, 17, '#00FF00');
         this.game.debug.text('speed: ' + this.player.body.velocity.x, 0, 32, '#00FF00');

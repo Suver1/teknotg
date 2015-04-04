@@ -16,6 +16,36 @@ body {
     vertical-align: middle;
 }
 
+input {
+    background: none repeat scroll 0 0 white;
+    box-shadow: none;
+    border: medium none;
+    height: 30px;
+    margin: 1rem;
+    font-size: 20px;
+
+}
+
+.button {
+    background: none repeat scroll 0 0 white;
+    box-shadow: none;
+    border: medium none;
+    height: 44px;
+    font-size: 20px;
+
+}
+#input-wrapper {
+    left: 0;
+    right: 0;
+    top: 40vh;
+    position: absolute;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
 /* Phaser */
 .phaser-container canvas {
     max-height: 100vh;
