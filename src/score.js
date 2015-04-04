@@ -6,7 +6,6 @@ var ScoreManager = function(initialScore) {
 // Untill there's something else we can use as score
 ScoreManager.prototype.incrementScore = function() {
     this.currentScore++;
-    console.log(this.currentScore);
 };
 
 // Reset score
@@ -36,10 +35,11 @@ ScoreManager.prototype.sendScore = function() {
 
 ScoreManager.prototype.getTimeElapsed = function() {
     return Date.now() - this.timeStarted;
-}
+};
+
 ScoreManager.prototype.setTimeStarted = function () {
     this.timeStarted = Date.now();
-}
+};
 
 // Fetches the scores to be displayed in scoreboard
 ScoreManager.prototype.getScore = function(data) {
