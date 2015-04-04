@@ -107,8 +107,6 @@ Level.prototype.gameOverScreen = function() {
     // 2. clearWorld (default true) clears the World display list fully (but not the Stage, so if you have added your own objects to the Stage they will need managing directly).
     // 3. clearCache (default false) clears all loaded assets.
     // 4. All other parameters from the fourth are variables that will be passed to the init function (if it has one). We pass the score to the GameOver state.
-    this.game.scoreManager.sendScore();
-    this.game.scoreManager.resetScore();
     this.game.state.start("Level02", true, false);
 };
 Level.prototype.playerTouchGround = function(player, ground) {
@@ -156,17 +154,18 @@ Level.prototype.playerOverlapItem = function(player, item) {
         this.game.scoreManager.incrementScore();
         item.destroy();
         this.incrementPlayerSpeed();
-        this.player.animations.frameRate = this.player.animations.frameRateStart + this.game.scoreManager.getCurrentScore() + this.player.animations.frameRateIncrement;
+        this.player.animations.frameRate = this.player.animations.frameRateStart +
+            this.game.scoreManager.getCurrentScore() +
+            this.player.animations.frameRateIncrement;
         break;
     case 'flag':
-        this.game.scoreManager.sendScore(this.game.scoreManager.getTimeElapsed());
-        this.game.scoreManager.resetScore();
         if (this.onFinish)
             this.onFinish();
         else
             this.gameOverScreen();
         break;
     case 'kill':
+        this.game.scoreManager.resetScore();
         this.restartLevel();
         break;
     }
