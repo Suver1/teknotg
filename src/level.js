@@ -30,6 +30,11 @@ Level.prototype.create = function(game) {
     this.player.isInAir = true; //Maybe remove if player starts on ground
     this.player.runSpeed = this.initialRunSpeed;
     this.player.incrementRunSpeed = this.runSpeedIncrement;
+    this.player.lastFrameVelocity = this.runSpeed;
+    // Animate
+    this.player.animations.add('straight', [0,1,2,3], 10, true);
+    this.player.animations.add('crash', [4,5,6], 10, true);
+    this.player.animations.play('straight');
 
     // Camera setup - Camera stops following player when it hits world bounds.
     this.game.camera.target = this.player;
@@ -65,6 +70,13 @@ Level.prototype.update = function() {
     if (this.game.input.keyboard.isDown(Phaser.Keyboard.ESC)) {
         this.restartLevel();
     }
+    if (this.player.body.velocity.x > 5 && this.player.lastFrameVelocity > 5) {
+        this.player.animations.play('straight');
+    } else {
+        this.player.animations.play('crash');
+        // starte timer
+    }
+    this.player.lastFrameVelocity = this.player.body.velocity.x; // Needs to be after velocity check
 };
 Level.prototype.render = function() {
     this.timeElapsedText.setText((Date.now() - this.timeStarted)/1000);
