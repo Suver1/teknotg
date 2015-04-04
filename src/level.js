@@ -53,7 +53,13 @@ Level.prototype.create = function(game) {
     this.createItems();
 
     this.coinSound = this.game.add.audio('coin');
-    this.coinSound.volume = 0.2;
+    this.coinSound.volume = this.muteAllSounds ? 0 : 0.2;
+
+    if (!this.game.backgroundMusic && !this.game.muteAllSounds) {
+        this.game.backgroundMusic = this.game.add.audio('game');
+        this.game.backgroundMusic.play();
+    }
+
     this.timeStarted = Date.now();
     this.timeElapsedText = this.game.add.text(700, 20, (Date.now() - this.timeStarted)/1000, {fill: '#ffffff'});
     this.timeElapsedText.fixedToCamera = true;
