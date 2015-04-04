@@ -18,16 +18,16 @@ ScoreManager.prototype.getCurrentScore = function() {
 };
 
 // Verifies and sends the final score
-ScoreManager.prototype.sendScore = function() {
+ScoreManager.prototype.sendScore = function(name,time) {
 
     reqwest({
         url: 'php-functions/score.php',
         method: 'POST',
         data: {
             action: 'sendScore',
-            name: 'derp',
+            name: name,
             score: this.currentScore,
-            time_used: '1'
+            time_used: this.timeElapsed
         }
     });
 

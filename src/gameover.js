@@ -3,12 +3,12 @@ var GameOver = function(game) {
 };
 
 GameOver.prototype = {
-    create: function(game, currentScore) {
+    create: function(game) {
 
         var bg = this.game.add.sprite(0, 0, 'background');
             bg.fixedToCamera = true;
         style = {fontSize: '32px', fill: '#FFF'};
-        game.add.text(this.game.width / 4, 100, 'Congratulations!\nYou made it in ' + this.game.scoreManager.currentTime / 1000 + ' seconds', style);
+        game.add.text(this.game.width / 4, 100, 'Congratulations!\nYou made it in ' + this.game.scoreManager.getTimeElapsed() / 1000 + ' seconds', style);
         //game.add.text(16, 16, 'time: ' + this.game.scoreManager.currentTime / 1000 + ' sec ', style);
         console.log("gameOver");
         // place game over stuff here
