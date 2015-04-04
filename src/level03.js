@@ -13,6 +13,7 @@ Level03.prototype.onFinish = function() {
     // 3. clearCache (default false) clears all loaded assets.
     // 4. All other parameters from the fourth are variables that will be passed to the init function (if it has one). We pass the score to the GameOver state.
     this.game.scoreManager.timeElapsed = this.game.scoreManager.getTimeElapsed();
+    this.game.scoreManager.totalScore = this.game.scoreManager.getCurrentScore();
     this.game.state.start("GameOver", true, false);
 };
 

@@ -26,7 +26,7 @@ ScoreManager.prototype.sendScore = function(name,time) {
         data: {
             action: 'sendScore',
             name: name,
-            score: this.currentScore,
+            score: this.totalScore,
             time_used: this.timeElapsed
         }
     });

@@ -40,8 +40,8 @@ GameOver.prototype = {
     },
     onClick: function() {
         this.inputWrapper.classList.add('hidden');
-        this.game.state.start("StartMenu");
         this.game.scoreManager.sendScore(this.inputField.value);
+        this.game.state.start("Highscores");
     },
     inputKeyDown: function(e) {
         if (e.keyCode == 13) {
