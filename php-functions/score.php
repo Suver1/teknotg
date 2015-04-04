@@ -111,7 +111,7 @@ function db_get_results() {
 
 function db_get_json_results() {
 
-    $rawResult = db_query("SELECT * FROM game_scores ORDER BY score DESC, entry_date ASC");
+    $rawResult = db_query("SELECT * FROM game_scores ORDER BY score DESC, entry_date ASC LIMIT 10");
 
     $results = array();
 
