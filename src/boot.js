@@ -1,7 +1,7 @@
 // Special state used to set stage size and scale.
 
 var Boot = function(game) {
-    console.log("%cStarting my awesome game", "color:white; background:red");
+
 };
 
 Boot.prototype = {
