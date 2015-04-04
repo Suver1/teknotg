@@ -18,12 +18,9 @@ Highscores.prototype = {
         }
 
 
-
-        var highscores = this.game.scoreManager.getScore();
-
-
-        console.log(highscores);
-
+        this.game.scoreManager.getScore(function (result) {
+            console.log(result.response);
+        });
 
     },
     render: function() {
@@ -38,4 +35,5 @@ Highscores.prototype = {
         if (e.keyCode == 13)
             this.playTheGame();
     }
+
 };

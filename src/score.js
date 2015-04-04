@@ -43,23 +43,18 @@ ScoreManager.prototype.sendScore = function() {
 };
 
 // Fetches the scores to be displayed in scoreboard
-ScoreManager.prototype.getScore = function() {
-    var scores;
+ScoreManager.prototype.getScore = function(data) {
 
     reqwest({
         url: 'php-functions/score.php',
         method: 'GET',
-        //type: 'JSON',
+        type: 'JSON',
         data: {
             action: 'getScore'
         },
         success: function(response) {
-            scores = response;
-            console.log(response);
+            data(response);
         }
     });
-
-
-    return scores;
 
 };

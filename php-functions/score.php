@@ -1,18 +1,16 @@
 <?php
 
-if ($_POST['action'] == 'sendScore') {
+if ($_GET['action'] == 'getScore') {
+
+    db_action('get', null, null, null);
+
+} else if ($_POST['action'] == 'sendScore') {
 
     $name = db_quote($_POST['name']);
     $score = db_quote($_POST['score']);
     $time_used = db_quote($_POST['time_used']);
 
     db_action('save', $name, $score, $time_used);
-
-}
-
-if ($_GET['action'] == 'getScore') {
-
-    db_action('get', null, null, null);
 
 } else {
 
@@ -113,8 +111,14 @@ function db_get_results() {
 
 function db_get_json_results() {
 
-    $result = db_query("SELECT * FROM game_scores ORDER BY score DESC, entry_date ASC");
+    $rawResult = db_query("SELECT * FROM game_scores ORDER BY score DESC, entry_date ASC");
 
-    return $result;
+    $results = array();
+
+    while ($result = mysqli_fetch_assoc($rawResult)) {
+        $results[] = $result;
+    }
+
+    echo json_encode($results);
 
 }
