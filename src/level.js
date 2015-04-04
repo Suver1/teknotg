@@ -58,6 +58,7 @@ Level.prototype.create = function(game) {
 
     if (!this.game.backgroundMusic && !this.game.muteAllSounds) {
         this.game.backgroundMusic = this.game.add.audio('game');
+        this.game.backgroundMusic.volume = this.muteAllSounds ? 0 : 0.6;
         this.game.backgroundMusic.play();
     }
 
