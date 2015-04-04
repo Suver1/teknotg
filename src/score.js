@@ -6,7 +6,7 @@ var ScoreManager = function(initialScore) {
 // Untill there's something else we can use as score
 ScoreManager.prototype.incrementScore = function() {
     this.currentScore++;
-    console.log(this.currentScore);
+    //console.log(this.currentScore);
 };
 
 // Reset score

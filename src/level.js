@@ -1,8 +1,6 @@
 var Level = function(game) { };
 
 Level.prototype.create = function(game) {
-    console.log(this.levelName);
-
     var jump = false;
     //var gameOver = this.game.add.button(this.game.width / 2, this.game.height / 2, "star", this.gameOverScreen, this);
     // Set world dimensions
@@ -63,7 +61,7 @@ Level.prototype.create = function(game) {
         this.game.backgroundMusic.play();
     }
 
-    
+
     if (typeof this.timeStarted == 'undefined') {
         this.timeStarted = Date.now();
         this.game.scoreManager.setTimeStarted();
