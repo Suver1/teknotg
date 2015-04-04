@@ -19,6 +19,10 @@ ScoreManager.prototype.checkScore = function() {
     console.log('checkScore');
 };
 
+ScoreManager.prototype.getCurrentScore = function() {
+    return this.currentScore;
+}
+
 // Verifies and sends the final score
 ScoreManager.prototype.sendScore = function() {
 

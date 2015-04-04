@@ -32,8 +32,11 @@ Level.prototype.create = function(game) {
     this.player.incrementRunSpeed = this.runSpeedIncrement;
     this.player.lastFrameVelocity = this.runSpeed;
     // Animate
-    this.player.animations.add('straight', [0,1,2,3], 10, true);
-    this.player.animations.add('crash', [4,5,6], 10, true);
+    this.player.animations.frameRateStart = 8;
+    this.player.animations.frameRateIncrement = 1;
+    this.player.animations.frameRate = this.player.animations.frameRateStart;
+    this.player.animations.add('straight', [0,1,2,3], this.player.animations.frameRateStart, true);
+    this.player.animations.add('crash', [4,5,6], this.player.animations.frameRateStart, true);
     this.player.animations.play('straight');
 
     // Camera setup - Camera stops following player when it hits world bounds.
@@ -71,9 +74,9 @@ Level.prototype.update = function() {
         this.restartLevel();
     }
     if (this.player.body.velocity.x > 5 && this.player.lastFrameVelocity > 5) {
-        this.player.animations.play('straight');
+        this.player.animations.play('straight', this.player.animations.frameRate);
     } else {
-        this.player.animations.play('crash');
+        this.player.animations.play('crash', this.player.animations.frameRate);
         // starte timer
     }
     this.player.lastFrameVelocity = this.player.body.velocity.x; // Needs to be after velocity check
@@ -145,6 +148,7 @@ Level.prototype.playerOverlapItem = function(player, item) {
         this.game.scoreManager.incrementScore();
         item.destroy();
         this.incrementPlayerSpeed();
+        this.player.animations.frameRate = this.player.animations.frameRateStart + this.game.scoreManager.getCurrentScore() + this.player.animations.frameRateIncrement;
         break;
     case 'flag':
         this.game.scoreManager.sendScore(Date.now() - this.timeStarted);
