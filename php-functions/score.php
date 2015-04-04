@@ -96,11 +96,10 @@ function db_get_results() {
 
     while ($entry = mysqli_fetch_assoc($result)) {
         echo '<tr>';
-        echo '<td>' . $entry{'id'} . '</td>';
-        echo '<td>' . $entry{'name'} . '</td>';
-        echo '<td>' . $entry{'score'} . '</td>';
-        echo '<td>' . $entry{'time_used'} . '</td>';
-        echo '<td>' . $entry{'entry_date'} . '</td>';
+
+        foreach (['id', 'name', 'score', 'time_used', 'entry_date'] as $field)
+            echo '<td>' . htmlspecialchars($entry[$field], ENT_QUOTES, 'UTF-8', true) . '</td>';
+
         echo '</tr>';
     }
 
